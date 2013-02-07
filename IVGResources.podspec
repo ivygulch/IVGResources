@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "git@github.com:ivygulch/IVGResources.git" }
   s.platform     = :ios, '5.0'
   s.source_files = 'IVGResources/source/**/*.*'
-  s.frameworks   = 'Foundation'
+  s.frameworks   = 'Foundation', 'UIKit', 'CoreGraphics'
   s.requires_arc = true
 end
 
