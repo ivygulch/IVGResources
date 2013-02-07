@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
+		F8B3211616C4620B006E53CC /* IVGResources.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8B3211516C4620B006E53CC /* IVGResources.h */; };
+		F8B3211816C4620B006E53CC /* IVGResources.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3211716C4620B006E53CC /* IVGResources.m */; };
+		F8B3212016C4620B006E53CC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
+		F8B3212216C4620B006E53CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3212116C4620B006E53CC /* UIKit.framework */; };
+		F8B3212316C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
+		F8B3212616C4620B006E53CC /* libIVGResources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3210D16C4620B006E53CC /* libIVGResources.a */; };
+		F8B3212C16C4620B006E53CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B3212A16C4620B006E53CC /* InfoPlist.strings */; };
+		F8B3212F16C4620B006E53CC /* IVGResourcesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3212E16C4620B006E53CC /* IVGResourcesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8B3212416C4620B006E53CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B3210516C4620B006E53CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B3210C16C4620B006E53CC;
+			remoteInfo = IVGResources;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8B3210B16C4620B006E53CC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				F8B3211616C4620B006E53CC /* IVGResources.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F8B3210D16C4620B006E53CC /* libIVGResources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGResources.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B3211016C4620B006E53CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8B3211416C4620B006E53CC /* IVGResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResources-Prefix.pch"; sourceTree = "<group>"; };
+		F8B3211516C4620B006E53CC /* IVGResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVGResources.h; sourceTree = "<group>"; };
+		F8B3211716C4620B006E53CC /* IVGResources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVGResources.m; sourceTree = "<group>"; };
+		F8B3211E16C4620B006E53CC /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B3211F16C4620B006E53CC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F8B3212116C4620B006E53CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F8B3212916C4620B006E53CC /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
+		F8B3212B16C4620B006E53CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8B3212D16C4620B006E53CC /* IVGResourcesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVGResourcesTests.h; sourceTree = "<group>"; };
+		F8B3212E16C4620B006E53CC /* IVGResourcesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVGResourcesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8B3210A16C4620B006E53CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B3211A16C4620B006E53CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B3212016C4620B006E53CC /* SenTestingKit.framework in Frameworks */,
+				F8B3212216C4620B006E53CC /* UIKit.framework in Frameworks */,
+				F8B3212316C4620B006E53CC /* Foundation.framework in Frameworks */,
+				F8B3212616C4620B006E53CC /* libIVGResources.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8B3210416C4620B006E53CC = {
+			isa = PBXGroup;
+			children = (
+				F8B3211216C4620B006E53CC /* IVGResources */,
+				F8B3212716C4620B006E53CC /* IVGResourcesTests */,
+				F8B3210F16C4620B006E53CC /* Frameworks */,
+				F8B3210E16C4620B006E53CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8B3210E16C4620B006E53CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3210D16C4620B006E53CC /* libIVGResources.a */,
+				F8B3211E16C4620B006E53CC /* IVGResourcesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8B3210F16C4620B006E53CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3211016C4620B006E53CC /* Foundation.framework */,
+				F8B3211F16C4620B006E53CC /* SenTestingKit.framework */,
+				F8B3212116C4620B006E53CC /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8B3211216C4620B006E53CC /* IVGResources */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3211516C4620B006E53CC /* IVGResources.h */,
+				F8B3211716C4620B006E53CC /* IVGResources.m */,
+				F8B3211316C4620B006E53CC /* Supporting Files */,
+			);
+			path = IVGResources;
+			sourceTree = "<group>";
+		};
+		F8B3211316C4620B006E53CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3211416C4620B006E53CC /* IVGResources-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8B3212716C4620B006E53CC /* IVGResourcesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3212D16C4620B006E53CC /* IVGResourcesTests.h */,
+				F8B3212E16C4620B006E53CC /* IVGResourcesTests.m */,
+				F8B3212816C4620B006E53CC /* Supporting Files */,
+			);
+			path = IVGResourcesTests;
+			sourceTree = "<group>";
+		};
+		F8B3212816C4620B006E53CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3212916C4620B006E53CC /* IVGResourcesTests-Info.plist */,
+				F8B3212A16C4620B006E53CC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8B3210C16C4620B006E53CC /* IVGResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B3213216C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResources" */;
+			buildPhases = (
+				F8B3210916C4620B006E53CC /* Sources */,
+				F8B3210A16C4620B006E53CC /* Frameworks */,
+				F8B3210B16C4620B006E53CC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IVGResources;
+			productName = IVGResources;
+			productReference = F8B3210D16C4620B006E53CC /* libIVGResources.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F8B3211D16C4620B006E53CC /* IVGResourcesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B3213516C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */;
+			buildPhases = (
+				F8B3211916C4620B006E53CC /* Sources */,
+				F8B3211A16C4620B006E53CC /* Frameworks */,
+				F8B3211B16C4620B006E53CC /* Resources */,
+				F8B3211C16C4620B006E53CC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8B3212516C4620B006E53CC /* PBXTargetDependency */,
+			);
+			name = IVGResourcesTests;
+			productName = IVGResourcesTests;
+			productReference = F8B3211E16C4620B006E53CC /* IVGResourcesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8B3210516C4620B006E53CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Ivy Gulch, LLC";
+			};
+			buildConfigurationList = F8B3210816C4620B006E53CC /* Build configuration list for PBXProject "IVGResources" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8B3210416C4620B006E53CC;
+			productRefGroup = F8B3210E16C4620B006E53CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8B3210C16C4620B006E53CC /* IVGResources */,
+				F8B3211D16C4620B006E53CC /* IVGResourcesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8B3211B16C4620B006E53CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B3212C16C4620B006E53CC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F8B3211C16C4620B006E53CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8B3210916C4620B006E53CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B3211816C4620B006E53CC /* IVGResources.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B3211916C4620B006E53CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B3212F16C4620B006E53CC /* IVGResourcesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8B3212516C4620B006E53CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B3210C16C4620B006E53CC /* IVGResources */;
+			targetProxy = F8B3212416C4620B006E53CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8B3212A16C4620B006E53CC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8B3212B16C4620B006E53CC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8B3213016C4620B006E53CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F8B3213116C4620B006E53CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8B3213316C4620B006E53CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IVGResources.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F8B3213416C4620B006E53CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IVGResources.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F8B3213616C4620B006E53CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
+				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F8B3213716C4620B006E53CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
+				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8B3210816C4620B006E53CC /* Build configuration list for PBXProject "IVGResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B3213016C4620B006E53CC /* Debug */,
+				F8B3213116C4620B006E53CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B3213216C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B3213316C4620B006E53CC /* Debug */,
+				F8B3213416C4620B006E53CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8B3213516C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B3213616C4620B006E53CC /* Debug */,
+				F8B3213716C4620B006E53CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8B3210516C4620B006E53CC /* Project object */;
+}
