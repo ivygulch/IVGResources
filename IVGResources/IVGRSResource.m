@@ -10,27 +10,6 @@
 #import "IVGRSUtils.h"
 #import "NSArray+IVGUtils.h"
 
-
-NSString *byte_to_binary(unsigned int x)
-{
-    static char b[16];
-    b[0] = '\0';
-
-    int16_t start = 1 << 11;
-    int z;
-    for (z = start; z > 0; z >>= 1)
-    {
-        strcat(b, ((x & z) == z) ? "1" : "0");
-        if ((z == (1 << 6)) || (z == (1 << 3))) {
-            strcat(b, " ");
-        }
-    }
-
-    return [NSString stringWithCString:b encoding:NSUTF8StringEncoding];
-}
-
-
-
 // return which mask values are a match for this particular interfaceOrientation
 int16_t maskForInterfaceOrientation(UIInterfaceOrientation interfaceOrientation) {
     switch (interfaceOrientation) {
@@ -131,10 +110,6 @@ NSUInteger priorityForMask(int16_t mask) {
           @"-Landscape@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_Landscape),
           @"-Landscape-568h@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_568h | kIVGRSResourceBitMask_orientation_Landscape)
           };
-//        NSLog(@"suffixes");
-//        [_sharedInstance enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-//            NSLog(@"  %@: %@", byte_to_binary([obj integerValue]), key);
-//        }];
     });
     return _sharedInstance;
 }
@@ -163,7 +138,6 @@ NSUInteger priorityForMask(int16_t mask) {
     }
 
     NSUInteger baseLength = [self.baseName length];
-    NSLog(@"base: %@, %d", self.baseName, baseLength);
     for (NSString *filename in filenames) {
         if (![resourceNamesUsed containsObject:filename]) {
             NSString *fileBaseName = [filename stringByDeletingPathExtension];
@@ -171,7 +145,6 @@ NSUInteger priorityForMask(int16_t mask) {
             if ([fileBaseName hasPrefix:self.baseName] && [fileExtension isEqualToString:self.extension]) {
                 NSString *fileQualifier = [fileBaseName substringFromIndex:baseLength];
                 NSString *qualifierMask = [[IVGRSResource suffixes] objectForKey:fileQualifier];
-                NSLog(@"%@: %@", filename, byte_to_binary([qualifierMask integerValue]));
                 if (qualifierMask != nil) {
                     NSString *resourcePath = [directoryPath stringByAppendingPathComponent:filename];
                     [resourceInstances setObject:resourcePath forKey:qualifierMask];
@@ -220,11 +193,9 @@ NSUInteger priorityForMask(int16_t mask) {
                                 userInterfaceIdiom:(UIUserInterfaceIdiom) userInterfaceIdiom;
 {
     int16_t mask = qualifierMask(interfaceOrientation, screenScale, screenSize, userInterfaceIdiom);
-    NSLog(@"io=%d, ss=%f,%f uii=%d mask=%@", interfaceOrientation, screenScale, screenSize.height, userInterfaceIdiom, byte_to_binary(mask));
     NSMutableArray *resourcePathKeys = [NSMutableArray array];
     [self.resourceInstances enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         int16_t resourceInstanceMask = [key integerValue];
-        NSLog(@"m=%@  k=%@  and=%@  %@", byte_to_binary(mask), byte_to_binary(resourceInstanceMask), byte_to_binary(mask & resourceInstanceMask), [obj lastPathComponent]);
         if ((mask & resourceInstanceMask) == resourceInstanceMask) {
             [resourcePathKeys addObject:key];
         }

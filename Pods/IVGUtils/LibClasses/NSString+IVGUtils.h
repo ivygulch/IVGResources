@@ -18,4 +18,6 @@
 - (NSString *) trimAllTrailing:(NSString *) value;
 - (NSString *) trimMatchingLeadingTrailing:(NSString *) value;
 
++ (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
+
 @end

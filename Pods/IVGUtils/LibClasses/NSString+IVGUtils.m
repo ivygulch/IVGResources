@@ -71,4 +71,23 @@
     }
 }
 
++ (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
+{
+    static char b[33];
+    b[0] = '\0';
+
+    uint32_t start = 1 << (bitCount-1);
+    BOOL everOn = NO;
+    for (uint32_t z = start; z > 0; z >>= 1)
+    {
+        BOOL on = (x & z) == z;
+        everOn |= on;
+        if (leftPad || everOn || (z == 1)) {
+            strcat(b, (on ? "1" : "0"));
+        }
+    }
+
+    return [NSString stringWithCString:b encoding:NSUTF8StringEncoding];
+}
+
 @end

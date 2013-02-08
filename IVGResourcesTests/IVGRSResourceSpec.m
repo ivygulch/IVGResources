@@ -52,7 +52,7 @@ describe(@"Resource", ^{
 
     it(@"should create resource for each valid temp file", ^{
         NSString *name = @"test1.png";
-        NSArray *qualifiers = @[@"",@"-568h@2x~iphone"];
+  NSArray *qualifiers = @[@"",@"-568h@2x~iphone"];
         NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
         IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
         [resource rebuildResourceInstances];
@@ -92,9 +92,10 @@ describe(@"Resource", ^{
         IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
 
         NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,568) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
-        [[paths should] haveCountOf:2];
+        [[paths should] haveCountOf:3];
         [[[paths objectAtIndex:0] should] equal:[tmpDir stringByAppendingPathComponent:@"test1-568h@2x~iphone.png"]];
-        [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+        [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1@2x.png"]];
+        [[[paths objectAtIndex:2] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
 
         NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,568) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
         [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1-568h@2x~iphone.png"]];
@@ -107,11 +108,12 @@ describe(@"Resource", ^{
         IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
 
         NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
-        [[paths should] haveCountOf:1];
+        [[paths should] haveCountOf:2];
+        [[[paths objectAtIndex:0] should] equal:[tmpDir stringByAppendingPathComponent:@"test1@2x.png"]];
         [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
 
         NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
-        [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+        [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1@2x.png"]];
     });
 
     it(@"should not find valid files for iPad", ^{
