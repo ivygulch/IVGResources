@@ -13,7 +13,11 @@
 		F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
 		F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
 		F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8691F4D16C587E700334C0D /* InfoPlist.strings */; };
-		F8691F5216C587E700334C0D /* IVGResourcesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8691F5116C587E700334C0D /* IVGResourcesTests.m */; };
+		F8691F5A16C5898700334C0D /* IVGRSResourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */; };
+		F8691F5B16C5898700334C0D /* testIVGRSResource.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F5816C5898700334C0D /* testIVGRSResource.txt */; };
+		F8691F5C16C5898700334C0D /* testIVGRSResource@2x.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */; };
+		F8691F5F16C589F000334C0D /* libIVGResources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3210D16C4620B006E53CC /* libIVGResources.a */; };
+		F8691F6016C58A0900334C0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214916C46C29006E53CC /* CoreGraphics.framework */; };
 		F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */; };
 		F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
 		F8B3213D16C464E5006E53CC /* IVGRSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3213C16C464E5006E53CC /* IVGRSConstants.m */; };
@@ -21,6 +25,16 @@
 		F8B3214816C46C1B006E53CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
 		F8B3214A16C46C29006E53CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214916C46C29006E53CC /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8691F5D16C589E900334C0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B3210516C4620B006E53CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B3210C16C4620B006E53CC;
+			remoteInfo = IVGResources;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F8B3210B16C4620B006E53CC /* CopyFiles */ = {
@@ -42,9 +56,10 @@
 		F8691F4616C587E700334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
 		F8691F4E16C587E700334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8691F5016C587E700334C0D /* IVGResourcesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVGResourcesTests.h; sourceTree = "<group>"; };
-		F8691F5116C587E700334C0D /* IVGResourcesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVGResourcesTests.m; sourceTree = "<group>"; };
 		F8691F5316C587E700334C0D /* IVGResourcesTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResourcesTests-Prefix.pch"; sourceTree = "<group>"; };
+		F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSResourceSpec.m; sourceTree = "<group>"; };
+		F8691F5816C5898700334C0D /* testIVGRSResource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testIVGRSResource.txt; sourceTree = "<group>"; };
+		F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "testIVGRSResource@2x.txt"; sourceTree = "<group>"; };
 		F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSUtils.h; sourceTree = "<group>"; };
 		F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSUtils.m; sourceTree = "<group>"; };
 		F8B3210D16C4620B006E53CC /* libIVGResources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGResources.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8691F6016C58A0900334C0D /* CoreGraphics.framework in Frameworks */,
+				F8691F5F16C589F000334C0D /* libIVGResources.a in Frameworks */,
 				F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */,
 				F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */,
 				F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */,
@@ -88,8 +105,9 @@
 		F8691F4A16C587E700334C0D /* IVGResourcesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8691F5016C587E700334C0D /* IVGResourcesTests.h */,
-				F8691F5116C587E700334C0D /* IVGResourcesTests.m */,
+				F8691F5816C5898700334C0D /* testIVGRSResource.txt */,
+				F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */,
+				F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */,
 				F8691F4B16C587E700334C0D /* Supporting Files */,
 			);
 			path = IVGResourcesTests;
@@ -177,6 +195,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8691F5E16C589E900334C0D /* PBXTargetDependency */,
 			);
 			name = IVGResourcesTests;
 			productName = IVGResourcesTests;
@@ -234,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */,
+				F8691F5B16C5898700334C0D /* testIVGRSResource.txt in Resources */,
+				F8691F5C16C5898700334C0D /* testIVGRSResource@2x.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8691F5216C587E700334C0D /* IVGResourcesTests.m in Sources */,
+				F8691F5A16C5898700334C0D /* IVGRSResourceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +324,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8691F5E16C589E900334C0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B3210C16C4620B006E53CC /* IVGResources */;
+			targetProxy = F8691F5D16C589E900334C0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F8691F4D16C587E700334C0D /* InfoPlist.strings */ = {
