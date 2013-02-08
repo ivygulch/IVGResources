@@ -14,32 +14,25 @@
 #import "NSString+IVGUtils.h"
 
 @interface IVGRSResource(testing)
-+ (NSDictionary *) suffixes;
+@property (nonatomic,strong) NSDictionary *resourceInstances;
+- (void) rebuildResourceInstances;
 @end
 
 @implementation KWSpec(helper)
 
-+ (NSString *) createTemporaryFilesWithBaseName:(NSString *) fileBaseName extension:(NSString *) extension qualifiers:(NSArray *) qualifiers;
++ (NSString *) temporaryFilesWithName:(NSString *) name qualifiers:(NSArray *) qualifiers;
 {
+    NSString *baseName = [name stringByDeletingPathExtension];
+    NSString *extension = [name pathExtension];
     NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString UUID]];
     [[NSFileManager defaultManager] createDirectoryAtPath:tempPath withIntermediateDirectories:NO attributes:nil error:nil];
     for (NSString *qualifier in qualifiers) {
-        NSString *filename = [NSString stringWithFormat:@"%@%@.%@", fileBaseName, qualifier, extension];
+        NSString *filename = [NSString stringWithFormat:@"%@%@.%@", baseName, qualifier, extension];
         NSString *path = [tempPath stringByAppendingPathComponent:filename];
         NSData *data = [path dataUsingEncoding:NSUTF8StringEncoding];
         [[NSFileManager defaultManager] createFileAtPath:path contents:data attributes:nil];
     }
     return tempPath;
-}
-
-+ (void) suffix:(NSString *) suffix1 shouldBeGreaterThan:(NSString *) suffix2;
-{
-    NSNumber *value1 = [[IVGRSResource suffixes] objectForKey:suffix1];
-    [value1 shouldNotBeNil];
-    NSNumber *value2 = [[IVGRSResource suffixes] objectForKey:suffix2];
-    [value2 shouldNotBeNil];
-
-    [[theValue([value1 integerValue]) should] beGreaterThan:theValue([value2 integerValue])];
 }
 
 @end
@@ -48,23 +41,81 @@ SPEC_BEGIN(IVGRSResourceSpec)
 
 describe(@"Resource", ^{
 
-    context(@"suffix priorities", ^{
-        NSString *defaultSuffix = combinedText(kIVGRSResourceOrientationDefault, kIVGRSResourceScaleDefault, kIVGRSResourceDeviceDefault);
-        NSString *pud568iPhone = combinedText(kIVGRSResourceOrientationPortraitUpsideDown, kIVGRSResourceScale568h2X, kIVGRSResourceDeviceiPhone);
-        NSString *p2XiPhone = combinedText(kIVGRSResourceOrientationPortrait, kIVGRSResourceScale2X, kIVGRSResourceDeviceiPhone);
+    context(@"rebuildResourceInstances should create resource for each valid temp file", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"",@"-568h@2x~iphone"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+        [resource rebuildResourceInstances];
 
-        it(@"default should come after portraitUpsideDown 568h2X iPhone", ^{
-            [self suffix:defaultSuffix shouldBeGreaterThan:pud568iPhone];
-        });
-
-        it(@"portrait 2x iPhone should come after portraitUpsideDown 568h2X iPhone", ^{
-            [self suffix:p2XiPhone shouldBeGreaterThan:pud568iPhone];
-        });
+        [[resource.resourceInstances should] haveCountOf:[qualifiers count]];
     });
 
-    context(@"", ^{
-//        it(@""
-        NSString *temporaryDir = [self createTemporaryFilesWithBaseName:@"test1" extension:@"png" qualifiers:@[@"",@"-568h@2x"]];
+    context(@"rebuildResourceInstances should not create resource for invalid temp file", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"-InvalidQualifier"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+        [resource rebuildResourceInstances];
+
+        [[resource.resourceInstances should] haveCountOf:0];
+    });
+
+    context(@"resourceResourcePaths should find valid files for retina iphone 4", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"",@"-568h@2x~iphone",@"@2x"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+
+        NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,480) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
+        [[paths should] haveCountOf:2];
+        [[[paths objectAtIndex:0] should] equal:[tmpDir stringByAppendingPathComponent:@"test1@2x.png"]];
+        [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+
+        NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,480) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
+        [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1@2x.png"]];
+    });
+
+    context(@"resourceResourcePaths should find valid files for retina iphone 5", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"",@"-568h@2x~iphone",@"@2x"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+
+        NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,568) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
+        [[paths should] haveCountOf:2];
+        [[[paths objectAtIndex:0] should] equal:[tmpDir stringByAppendingPathComponent:@"test1-568h@2x~iphone.png"]];
+        [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+
+        NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(320,568) userInterfaceIdiom:UIUserInterfaceIdiomPhone];
+        [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1-568h@2x~iphone.png"]];
+    });
+
+    context(@"resourceResourcePaths should find valid files for retina iPad", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"",@"-568h@2x~iphone",@"@2x"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+
+        NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
+        [[paths should] haveCountOf:1];
+        [[[paths objectAtIndex:1] should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+
+        NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:2.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
+        [[highestPriorityPath should] equal:[tmpDir stringByAppendingPathComponent:@"test1.png"]];
+    });
+
+    context(@"resourceResourcePaths should not find valid files for iPad", ^{
+        NSString *name = @"test1.png";
+        NSArray *qualifiers = @[@"-568h@2x~iphone",@"@2x"];
+        NSString *tmpDir = [self temporaryFilesWithName:name qualifiers:qualifiers];
+        IVGRSResource *resource = [[IVGRSResource alloc] initWithBasePath:tmpDir name:name];
+
+        NSArray *paths = [resource resourcePathsForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:1.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
+        [[paths should] haveCountOf:0];
+
+        NSString *highestPriorityPath = [resource resourcePathForInterfaceOrientation:UIInterfaceOrientationPortrait screenScale:1.0 screenSize:CGSizeMake(768,1024) userInterfaceIdiom:UIUserInterfaceIdiomPad];
+        [highestPriorityPath shouldBeNil];
     });
 
 });

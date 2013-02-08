@@ -11,28 +11,17 @@
 extern NSString * const kIVGRSNotification_resourceChangedSubresource;
 
 typedef enum {
-    kIVGRSResourceOrientationDefault,
-    kIVGRSResourceOrientationPortraitUpsideDown,
-    kIVGRSResourceOrientationPortrait,
-    kIVGRSResourceOrientationLandscapeLeft,
-    kIVGRSResourceOrientationLandscapeRight,
-    kIVGRSResourceOrientationLandscape
-} kIVGRSResourceOrientation;
-static const kIVGRSResourceOrientation kIVGRSResourceOrientationMin = kIVGRSResourceOrientationDefault;
-static const kIVGRSResourceOrientation kIVGRSResourceOrientationMax = kIVGRSResourceOrientationLandscape;
+    kIVGRSResourceBitMask_device_generic = 1 << 0,
+    kIVGRSResourceBitMask_device_ipad = 1 << 1,
+    kIVGRSResourceBitMask_device_iphone = 1 << 2,
+    kIVGRSResourceBitMask_scale_generic = 1 << 3,
+    kIVGRSResourceBitMask_scale_2X = 1 << 4,
+    kIVGRSResourceBitMask_scale_568h = 1 << 5,
+    kIVGRSResourceBitMask_orientation_generic = 1 << 6,
+    kIVGRSResourceBitMask_orientation_Portrait = 1 << 7,
+    kIVGRSResourceBitMask_orientation_PortraitUpsideDown = 1 << 8,
+    kIVGRSResourceBitMask_orientation_Landscape = 1 << 9,
+    kIVGRSResourceBitMask_orientation_LandscapeLeft = 1 << 10,
+    kIVGRSResourceBitMask_orientation_LandscapeRight = 1 << 11
+} kIVGRSResourceBitMask;
 
-typedef enum {
-    kIVGRSResourceScaleDefault,
-    kIVGRSResourceScale568h2X,
-    kIVGRSResourceScale2X
-} kIVGRSResourceScale;
-static const kIVGRSResourceScale kIVGRSResourceScaleMin = kIVGRSResourceScaleDefault;
-static const kIVGRSResourceScale kIVGRSResourceScaleMax = kIVGRSResourceScale2X;
-
-typedef enum {
-    kIVGRSResourceDeviceDefault,
-    kIVGRSResourceDeviceiPhone,
-    kIVGRSResourceDeviceiPad
-} kIVGRSResourceDevice;
-static const kIVGRSResourceDevice kIVGRSResourceDeviceMin = kIVGRSResourceDeviceDefault;
-static const kIVGRSResourceDevice kIVGRSResourceDeviceMax = kIVGRSResourceDeviceiPad;

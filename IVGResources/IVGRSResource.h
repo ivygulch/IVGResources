@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "IVGRSConstants.h"
-#import "IVGRSResourceInstance.h"
 
 @interface IVGRSResource : NSObject
 
@@ -17,6 +16,14 @@
 
 - (id) initWithBasePath:(NSString *) basePath name:(NSString *) name;
 
-- (IVGRSResourceInstance *) currentResourceInstance;
+- (NSString *) currentResourcePathForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
+- (NSArray *) resourcePathsForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation
+                                       screenScale:(CGFloat) screenScale
+                                        screenSize:(CGSize) screenSize
+                                userInterfaceIdiom:(UIUserInterfaceIdiom) userInterfaceIdiom;
+- (NSString *) resourcePathForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation
+                                       screenScale:(CGFloat) screenScale
+                                        screenSize:(CGSize) screenSize
+                                userInterfaceIdiom:(UIUserInterfaceIdiom) userInterfaceIdiom;
 
 @end
