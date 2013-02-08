@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07D78EC1FF07480C995FF59E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 534A5C4FDDBD4FD4AE488312 /* libPods.a */; };
-		F8691F2B16C5864900334C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
-		F8691F2C16C5864900334C0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
-		F8691F2D16C5864900334C0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
-		F8691F3316C5864900334C0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8691F3116C5864900334C0D /* InfoPlist.strings */; };
-		F8691F3E16C5867C00334C0D /* IVGRSResourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8691F3B16C5867C00334C0D /* IVGRSResourceSpec.m */; };
-		F8691F3F16C5867C00334C0D /* testIVGRSResource.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F3C16C5867C00334C0D /* testIVGRSResource.txt */; };
-		F8691F4016C5867C00334C0D /* testIVGRSResource@2x.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F3D16C5867C00334C0D /* testIVGRSResource@2x.txt */; };
+		F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
+		F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
+		F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
+		F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8691F4D16C587E700334C0D /* InfoPlist.strings */; };
+		F8691F5216C587E700334C0D /* IVGResourcesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8691F5116C587E700334C0D /* IVGResourcesTests.m */; };
 		F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */; };
 		F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
 		F8B3213D16C464E5006E53CC /* IVGRSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3213C16C464E5006E53CC /* IVGRSConstants.m */; };
@@ -36,15 +33,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		534A5C4FDDBD4FD4AE488312 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		95A8BF0750D24DCE88ADBBF3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		F8691F2A16C5864900334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8691F3016C5864900334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
-		F8691F3216C5864900334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8691F3716C5864900334C0D /* IVGResourcesTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResourcesTests-Prefix.pch"; sourceTree = "<group>"; };
-		F8691F3B16C5867C00334C0D /* IVGRSResourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSResourceSpec.m; sourceTree = "<group>"; };
-		F8691F3C16C5867C00334C0D /* testIVGRSResource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testIVGRSResource.txt; sourceTree = "<group>"; };
-		F8691F3D16C5867C00334C0D /* testIVGRSResource@2x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "testIVGRSResource@2x.txt"; sourceTree = "<group>"; };
+		F8691F4616C587E700334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
+		F8691F4E16C587E700334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8691F5016C587E700334C0D /* IVGResourcesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVGResourcesTests.h; sourceTree = "<group>"; };
+		F8691F5116C587E700334C0D /* IVGResourcesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVGResourcesTests.m; sourceTree = "<group>"; };
+		F8691F5316C587E700334C0D /* IVGResourcesTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResourcesTests-Prefix.pch"; sourceTree = "<group>"; };
 		F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSUtils.h; sourceTree = "<group>"; };
 		F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSUtils.m; sourceTree = "<group>"; };
 		F8B3210D16C4620B006E53CC /* libIVGResources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGResources.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,13 +54,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F8691F2616C5864900334C0D /* Frameworks */ = {
+		F8691F4216C587E700334C0D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8691F2B16C5864900334C0D /* SenTestingKit.framework in Frameworks */,
-				F8691F2C16C5864900334C0D /* UIKit.framework in Frameworks */,
-				F8691F2D16C5864900334C0D /* Foundation.framework in Frameworks */,
+				F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */,
+				F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */,
+				F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,30 +71,28 @@
 				F8B3214A16C46C29006E53CC /* CoreGraphics.framework in Frameworks */,
 				F8B3214816C46C1B006E53CC /* UIKit.framework in Frameworks */,
 				F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */,
-				07D78EC1FF07480C995FF59E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F8691F2E16C5864900334C0D /* IVGResourcesTests */ = {
+		F8691F4A16C587E700334C0D /* IVGResourcesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8691F3B16C5867C00334C0D /* IVGRSResourceSpec.m */,
-				F8691F3C16C5867C00334C0D /* testIVGRSResource.txt */,
-				F8691F3D16C5867C00334C0D /* testIVGRSResource@2x.txt */,
-				F8691F2F16C5864900334C0D /* Supporting Files */,
+				F8691F5016C587E700334C0D /* IVGResourcesTests.h */,
+				F8691F5116C587E700334C0D /* IVGResourcesTests.m */,
+				F8691F4B16C587E700334C0D /* Supporting Files */,
 			);
 			path = IVGResourcesTests;
 			sourceTree = "<group>";
 		};
-		F8691F2F16C5864900334C0D /* Supporting Files */ = {
+		F8691F4B16C587E700334C0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8691F3016C5864900334C0D /* IVGResourcesTests-Info.plist */,
-				F8691F3116C5864900334C0D /* InfoPlist.strings */,
-				F8691F3716C5864900334C0D /* IVGResourcesTests-Prefix.pch */,
+				F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */,
+				F8691F4D16C587E700334C0D /* InfoPlist.strings */,
+				F8691F5316C587E700334C0D /* IVGResourcesTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -109,10 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				F8B3211216C4620B006E53CC /* IVGResources */,
-				F8691F2E16C5864900334C0D /* IVGResourcesTests */,
+				F8691F4A16C587E700334C0D /* IVGResourcesTests */,
 				F8B3210F16C4620B006E53CC /* Frameworks */,
 				F8B3210E16C4620B006E53CC /* Products */,
-				95A8BF0750D24DCE88ADBBF3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B3210D16C4620B006E53CC /* libIVGResources.a */,
-				F8691F2A16C5864900334C0D /* IVGResourcesTests.octest */,
+				F8691F4616C587E700334C0D /* IVGResourcesTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +123,6 @@
 				F8B3214716C46C1B006E53CC /* UIKit.framework */,
 				F8B3211016C4620B006E53CC /* Foundation.framework */,
 				F8B3211F16C4620B006E53CC /* SenTestingKit.framework */,
-				534A5C4FDDBD4FD4AE488312 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,14 +152,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F8691F2916C5864900334C0D /* IVGResourcesTests */ = {
+		F8691F4516C587E700334C0D /* IVGResourcesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8691F3A16C5864900334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */;
+			buildConfigurationList = F8691F5416C587E700334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */;
 			buildPhases = (
-				F8691F2516C5864900334C0D /* Sources */,
-				F8691F2616C5864900334C0D /* Frameworks */,
-				F8691F2716C5864900334C0D /* Resources */,
-				F8691F2816C5864900334C0D /* ShellScript */,
+				F8691F4116C587E700334C0D /* Sources */,
+				F8691F4216C587E700334C0D /* Frameworks */,
+				F8691F4316C587E700334C0D /* Resources */,
+				F8691F4416C587E700334C0D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -177,7 +167,7 @@
 			);
 			name = IVGResourcesTests;
 			productName = IVGResourcesTests;
-			productReference = F8691F2A16C5864900334C0D /* IVGResourcesTests.octest */;
+			productReference = F8691F4616C587E700334C0D /* IVGResourcesTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		F8B3210C16C4620B006E53CC /* IVGResources */ = {
@@ -187,7 +177,6 @@
 				F8B3210916C4620B006E53CC /* Sources */,
 				F8B3210A16C4620B006E53CC /* Frameworks */,
 				F8B3210B16C4620B006E53CC /* CopyFiles */,
-				CD30AEE3AFBF4E379726D354 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,40 +209,24 @@
 			projectRoot = "";
 			targets = (
 				F8B3210C16C4620B006E53CC /* IVGResources */,
-				F8691F2916C5864900334C0D /* IVGResourcesTests */,
+				F8691F4516C587E700334C0D /* IVGResourcesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F8691F2716C5864900334C0D /* Resources */ = {
+		F8691F4316C587E700334C0D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8691F3316C5864900334C0D /* InfoPlist.strings in Resources */,
-				F8691F3F16C5867C00334C0D /* testIVGRSResource.txt in Resources */,
-				F8691F4016C5867C00334C0D /* testIVGRSResource@2x.txt in Resources */,
+				F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CD30AEE3AFBF4E379726D354 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
-		F8691F2816C5864900334C0D /* ShellScript */ = {
+		F8691F4416C587E700334C0D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,11 +242,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F8691F2516C5864900334C0D /* Sources */ = {
+		F8691F4116C587E700334C0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8691F3E16C5867C00334C0D /* IVGRSResourceSpec.m in Sources */,
+				F8691F5216C587E700334C0D /* IVGResourcesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,10 +263,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F8691F3116C5864900334C0D /* InfoPlist.strings */ = {
+		F8691F4D16C587E700334C0D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8691F3216C5864900334C0D /* en */,
+				F8691F4E16C587E700334C0D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -301,7 +274,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F8691F3816C5864900334C0D /* Debug */ = {
+		F8691F5516C587E700334C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -317,7 +290,7 @@
 			};
 			name = Debug;
 		};
-		F8691F3916C5864900334C0D /* Release */ = {
+		F8691F5616C587E700334C0D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -388,7 +361,6 @@
 		};
 		F8B3213316C4620B006E53CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A8BF0750D24DCE88ADBBF3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/IVGResources.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -400,7 +372,6 @@
 		};
 		F8B3213416C4620B006E53CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A8BF0750D24DCE88ADBBF3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/IVGResources.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -413,11 +384,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8691F3A16C5864900334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */ = {
+		F8691F5416C587E700334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8691F3816C5864900334C0D /* Debug */,
-				F8691F3916C5864900334C0D /* Release */,
+				F8691F5516C587E700334C0D /* Debug */,
+				F8691F5616C587E700334C0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

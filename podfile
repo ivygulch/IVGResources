@@ -1,3 +1,7 @@
 platform :ios, '5.0'
 
 pod 'IVGUtils', '0.0.1'
+
+target :IVGResourcesTests, :exclusive => true do
+  pod 'Kiwi'
+end
