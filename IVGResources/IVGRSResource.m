@@ -8,10 +8,10 @@
 
 #import "IVGRSResource.h"
 #import "IVGRSUtils.h"
-//#import "NSArray+IVGUtils.h"
+#import "NSArray+IVGUtils.h"
 
 
-const char *byte_to_binary(int16_t x)
+NSString *byte_to_binary(unsigned int x)
 {
     static char b[16];
     b[0] = '\0';
@@ -26,7 +26,7 @@ const char *byte_to_binary(int16_t x)
         }
     }
 
-    return b;
+    return [NSString stringWithCString:b encoding:NSUTF8StringEncoding];
 }
 
 
@@ -92,7 +92,7 @@ NSUInteger priorityForMask(int16_t mask) {
           @"@2x":@(kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_generic),
           @"~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_generic | kIVGRSResourceBitMask_orientation_generic),
           @"@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_generic),
-          @"-568h@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_generic),
+          @"-568h@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_568h | kIVGRSResourceBitMask_orientation_generic),
           @"~ipad":@(kIVGRSResourceBitMask_device_ipad | kIVGRSResourceBitMask_scale_generic | kIVGRSResourceBitMask_orientation_generic),
           @"@2x~ipad":@(kIVGRSResourceBitMask_device_ipad | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_generic),
           @"-PortraitUpsideDown":@(kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_scale_generic | kIVGRSResourceBitMask_orientation_PortraitUpsideDown),
@@ -131,10 +131,10 @@ NSUInteger priorityForMask(int16_t mask) {
           @"-Landscape@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_Landscape),
           @"-Landscape-568h@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_568h | kIVGRSResourceBitMask_orientation_Landscape)
           };
-        NSLog(@"suffixes");
-        [_sharedInstance enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            NSLog(@"  %s: %@", byte_to_binary([obj integerValue]), key);
-        }];
+//        NSLog(@"suffixes");
+//        [_sharedInstance enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//            NSLog(@"  %@: %@", byte_to_binary([obj integerValue]), key);
+//        }];
     });
     return _sharedInstance;
 }
@@ -171,7 +171,7 @@ NSUInteger priorityForMask(int16_t mask) {
             if ([fileBaseName hasPrefix:self.baseName] && [fileExtension isEqualToString:self.extension]) {
                 NSString *fileQualifier = [fileBaseName substringFromIndex:baseLength];
                 NSString *qualifierMask = [[IVGRSResource suffixes] objectForKey:fileQualifier];
-                NSLog(@"%@: %s", filename, byte_to_binary([qualifierMask integerValue]));
+                NSLog(@"%@: %@", filename, byte_to_binary([qualifierMask integerValue]));
                 if (qualifierMask != nil) {
                     NSString *resourcePath = [directoryPath stringByAppendingPathComponent:filename];
                     [resourceInstances setObject:resourcePath forKey:qualifierMask];
@@ -219,18 +219,16 @@ NSUInteger priorityForMask(int16_t mask) {
                                         screenSize:(CGSize) screenSize
                                 userInterfaceIdiom:(UIUserInterfaceIdiom) userInterfaceIdiom;
 {
-    kIVGRSResourceBitMask mask = qualifierMask(interfaceOrientation, screenScale, screenSize, userInterfaceIdiom);
+    int16_t mask = qualifierMask(interfaceOrientation, screenScale, screenSize, userInterfaceIdiom);
+    NSLog(@"io=%d, ss=%f,%f uii=%d mask=%@", interfaceOrientation, screenScale, screenSize.height, userInterfaceIdiom, byte_to_binary(mask));
     NSMutableArray *resourcePathKeys = [NSMutableArray array];
     [self.resourceInstances enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         int16_t resourceInstanceMask = [key integerValue];
-        if ((mask & resourceInstanceMask) != 0) {
+        NSLog(@"m=%@  k=%@  and=%@  %@", byte_to_binary(mask), byte_to_binary(resourceInstanceMask), byte_to_binary(mask & resourceInstanceMask), [obj lastPathComponent]);
+        if ((mask & resourceInstanceMask) == resourceInstanceMask) {
             [resourcePathKeys addObject:key];
         }
     }];
-    NSLog(@"before resourcePathKeys");
-    for (NSNumber *k in resourcePathKeys) {
-        NSLog(@" %s: %@", byte_to_binary([k integerValue]), [[self.resourceInstances objectForKey:k] lastPathComponent]);
-    }
     NSArray *sortedKeys = [resourcePathKeys sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSUInteger priority1 = priorityForMask([obj1 integerValue]);
         NSUInteger priority2 = priorityForMask([obj2 integerValue]);
@@ -242,15 +240,8 @@ NSUInteger priorityForMask(int16_t mask) {
         } else {
             result =NSOrderedSame;
         }
-        NSLog(@"    1=%s %d %@", byte_to_binary([obj1 integerValue]), priority1, [[self.resourceInstances objectForKey:obj1] lastPathComponent]);
-        NSLog(@"    2=%s %d %@", byte_to_binary([obj2 integerValue]), priority2, [[self.resourceInstances objectForKey:obj2] lastPathComponent]);
-        NSLog(@"  r=%d", result);
         return result;
     }];
-    NSLog(@"after resourcePathKeys");
-    for (NSNumber *k in sortedKeys) {
-        NSLog(@" %s: %@", byte_to_binary([k integerValue]), [[self.resourceInstances objectForKey:k] lastPathComponent]);
-    }
     NSMutableArray *resourcePaths = [NSMutableArray arrayWithCapacity:[sortedKeys count]];
     for (NSNumber *resourcePathKey in sortedKeys) {
         [resourcePaths addObject:[self.resourceInstances objectForKey:resourcePathKey]];
@@ -267,7 +258,7 @@ NSUInteger priorityForMask(int16_t mask) {
                                                             screenScale:screenScale
                                                              screenSize:screenSize
                                                      userInterfaceIdiom:userInterfaceIdiom];
-    return [resourcePaths objectAtIndex:0];// outOfRange:nil];
+    return [resourcePaths objectAtIndex:0 outOfRange:nil];
 }
 
 
