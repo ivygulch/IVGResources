@@ -7,6 +7,7 @@
 //
 
 #import "IVGRSResource.h"
+#import "IVGRSUtils.h"
 
 NSNumber *makekey(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device) {
     return [NSNumber numberWithInteger:(combinedPriority(orientation,scale,device) << 24) | (orientation << 16) | (scale << 8) | device];

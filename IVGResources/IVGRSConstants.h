@@ -36,13 +36,3 @@ typedef enum {
 } kIVGRSResourceDevice;
 static const kIVGRSResourceDevice kIVGRSResourceDeviceMin = kIVGRSResourceDeviceDefault;
 static const kIVGRSResourceDevice kIVGRSResourceDeviceMax = kIVGRSResourceDeviceiPad;
-
-NSString *orientationText(kIVGRSResourceOrientation orientation);
-NSString *scaleText(kIVGRSResourceScale scale);
-NSString *deviceText(kIVGRSResourceDevice device);
-NSString *combinedText(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device);
-
-NSUInteger orientationPriority(kIVGRSResourceOrientation orientation);
-NSUInteger scalePriority(kIVGRSResourceScale scale);
-NSUInteger devicePriority(kIVGRSResourceDevice device);
-NSUInteger combinedPriority(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device);

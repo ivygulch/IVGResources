@@ -10,6 +10,7 @@
 		954FF742FC23473096D9093A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A70AB13FF974C8F986D2C5F /* libPods.a */; };
 		D3E8CC3AEAE444D7A5FF6C56 /* libPods-IVGResourcesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBDB0B434C943E0B655FDE0 /* libPods-IVGResourcesTests.a */; };
 		F8AE34BB16C4A554005A2965 /* IVGRSResourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34BA16C4A554005A2965 /* IVGRSResourceSpec.m */; };
+		F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */; };
 		F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
 		F8B3212016C4620B006E53CC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
 		F8B3212216C4620B006E53CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3212116C4620B006E53CC /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 		EA0644C24E2B4ED4B97643DB /* Pods-IVGResourcesTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVGResourcesTests.xcconfig"; path = "Pods/Pods-IVGResourcesTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F8218B83521D47EB8AD1D3C9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F8AE34BA16C4A554005A2965 /* IVGRSResourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSResourceSpec.m; sourceTree = "<group>"; };
+		F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSUtils.h; sourceTree = "<group>"; };
+		F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSUtils.m; sourceTree = "<group>"; };
 		F8B3210D16C4620B006E53CC /* libIVGResources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGResources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B3211016C4620B006E53CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8B3211416C4620B006E53CC /* IVGResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResources-Prefix.pch"; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				F8B3213B16C464E5006E53CC /* IVGRSConstants.h */,
 				F8B3213C16C464E5006E53CC /* IVGRSConstants.m */,
+				F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */,
+				F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */,
 				F8B3213E16C4653E006E53CC /* IVGRSResourceInstance.h */,
 				F8B3213F16C4653E006E53CC /* IVGRSResourceInstance.m */,
 				F8B3214116C4658F006E53CC /* IVGRSResource.h */,
@@ -309,6 +314,7 @@
 				F8B3213D16C464E5006E53CC /* IVGRSConstants.m in Sources */,
 				F8B3214016C4653E006E53CC /* IVGRSResourceInstance.m in Sources */,
 				F8B3214316C4658F006E53CC /* IVGRSResource.m in Sources */,
+				F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
