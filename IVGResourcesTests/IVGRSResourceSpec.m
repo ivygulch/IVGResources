@@ -47,11 +47,12 @@
 SPEC_BEGIN(IVGRSResourceSpec)
 
 describe(@"Resource", ^{
-    NSString *defaultSuffix = combinedText(kIVGRSResourceOrientationDefault, kIVGRSResourceScaleDefault, kIVGRSResourceDeviceDefault);
-    NSString *pud568iPhone = combinedText(kIVGRSResourceOrientationPortraitUpsideDown, kIVGRSResourceScale568h2X, kIVGRSResourceDeviceiPhone);
-    NSString *p2XiPhone = combinedText(kIVGRSResourceOrientationPortrait, kIVGRSResourceScale2X, kIVGRSResourceDeviceiPhone);
 
     context(@"suffix priorities", ^{
+        NSString *defaultSuffix = combinedText(kIVGRSResourceOrientationDefault, kIVGRSResourceScaleDefault, kIVGRSResourceDeviceDefault);
+        NSString *pud568iPhone = combinedText(kIVGRSResourceOrientationPortraitUpsideDown, kIVGRSResourceScale568h2X, kIVGRSResourceDeviceiPhone);
+        NSString *p2XiPhone = combinedText(kIVGRSResourceOrientationPortrait, kIVGRSResourceScale2X, kIVGRSResourceDeviceiPhone);
+
         it(@"default should come after portraitUpsideDown 568h2X iPhone", ^{
             [self suffix:defaultSuffix shouldBeGreaterThan:pud568iPhone];
         });

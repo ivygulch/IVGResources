@@ -16,7 +16,8 @@ NSNumber *makekey(kIVGRSResourceOrientation orientation, kIVGRSResourceScale sca
 @interface IVGRSResource()
 @property (nonatomic,copy,readonly) NSString *baseName;
 @property (nonatomic,copy,readonly) NSString *extension;
-@property (nonatomic,strong) NSMutableDictionary *resourceInstances;
+@property (nonatomic,strong) NSDictionary *resourceInstances;
+@property (nonatomic,strong) NSOrderedSet *orderedResourceInstanceKeys;
 @end
 
 @implementation IVGRSResource
@@ -57,35 +58,65 @@ NSNumber *makekey(kIVGRSResourceOrientation orientation, kIVGRSResourceScale sca
     return nil;
 }
 
-- (void) appendResourceInstances:(NSMutableDictionary *) resourceInstances fromDirectoryPath:(NSString *) directoryPath error:(NSError **) error;
+- (void) appendResourceInstances:(NSMutableDictionary *) resourceInstances
+           withResourceNamesUsed:(NSMutableSet *) resourceNamesUsed
+               fromDirectoryPath:(NSString *) directoryPath
+                           error:(NSError **) error;
 {
-/*
     NSFileManager *fileManager = [[NSFileManager alloc] init];
-    NSArray *filenames = [fileManager contentsOfDirectoryAtPath:path error:error];
+    NSArray *filenames = [fileManager contentsOfDirectoryAtPath:directoryPath error:error];
     if (filenames == nil) {
         return;
     }
 
     for (NSString *filename in filenames) {
-        NSString *fileBaseName = [filename stringByDeletingPathExtension];
-        NSString *fileExtension = [filename pathExtension];
-        if ([fileBaseName hasPrefix:self.baseName] && [fileExtension isEqualToString:self.extension]) {
-            IVGRSResourceInstance *resourceInstance = [IVGRSResourceInstance resourceInstanceForDirectoryPath:directoryPath fileBaseName:fileBaseName extension:fileExtension];
-            if (resourceInstance != nil) {
-                [resourceInstances setObject:resourceInstance forKey:filename];
+        if (![resourceNamesUsed containsObject:filename]) {
+            NSString *fileBaseName = [filename stringByDeletingPathExtension];
+            NSString *fileExtension = [filename pathExtension];
+            if ([fileBaseName hasPrefix:self.baseName] && [fileExtension isEqualToString:self.extension]) {
+                IVGRSResourceInstance *resourceInstance = [IVGRSResourceInstance resourceInstanceForDirectoryPath:directoryPath fileBaseName:fileBaseName extension:fileExtension];
+                if (resourceInstance != nil) {
+                    [resourceInstances setObject:resourceInstance forKey:filename];
+                    [resourceNamesUsed addObject:filename];
+                }
             }
         }
     }
- */
 }
+
 - (void) rebuildResourceInstances;
 {
     NSMutableDictionary *resourceInstances = [NSMutableDictionary dictionaryWithCapacity:100];
+    NSMutableSet *resourceNamesUsed = [NSMutableSet set];
     if (self.basePath != nil) {
-        [self appendResourceInstances:resourceInstances fromDirectoryPath:self.basePath error:nil];
+        [self appendResourceInstances:resourceInstances withResourceNamesUsed:resourceNamesUsed fromDirectoryPath:self.basePath error:nil];
     }
-    [self appendResourceInstances:resourceInstances fromDirectoryPath:[[NSBundle mainBundle] resourcePath] error:nil];
+    [self appendResourceInstances:resourceInstances withResourceNamesUsed:resourceNamesUsed fromDirectoryPath:[[NSBundle mainBundle] resourcePath] error:nil];
+    self.resourceInstances = [NSDictionary dictionaryWithDictionary:resourceInstances];
+    self.orderedResourceInstanceKeys = [NSOrderedSet orderedSetWithArray:[self.resourceInstances allKeys]];
 }
+
+- (IVGRSResourceInstance *) currentResourceInstanceForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
+{
+    return [self resourceInstanceForInterfaceOrientation:interfaceOrientation
+                                             screenScale:[UIScreen mainScreen].scale
+                                              screenSize:[UIScreen mainScreen].bounds.size
+                                      userInterfaceIdiom:[[UIDevice currentDevice] userInterfaceIdiom]];
+}
+
+- (IVGRSResourceInstance *) resourceInstanceForInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation
+                                                        screenScale:(CGFloat) screenScale
+                                                         screenSize:(CGSize) screenSize
+                                                 userInterfaceIdiom:(UIUserInterfaceIdiom) userInterfaceIdiom;
+{
+    kIVGRSResourceOrientation orientation = orientationFromInterfaceOrientation(interfaceOrientation);
+    kIVGRSResourceScale scale = scaleFromScreenScaleAndSize(screenScale, screenSize);
+    kIVGRSResourceDevice device = deviceFromUserIntefaceIdiom(userInterfaceIdiom);
+
+    IVGRSResourceInstance *result = [self.resourceInstances objectForKey:makekey(orientation, scale, device)];
+    
+}
+
 
 @end
 

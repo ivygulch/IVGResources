@@ -71,3 +71,32 @@ NSUInteger devicePriority(kIVGRSResourceDevice device) {
 NSUInteger combinedPriority(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device) {
     return orientationPriority(orientation) * scalePriority(scale) * devicePriority(device);
 }
+
+
+kIVGRSResourceOrientation orientationFromInterfaceOrientation(UIInterfaceOrientation interfaceOrientation) {
+    switch (interfaceOrientation) {
+        case UIInterfaceOrientationPortrait: return kIVGRSResourceOrientationPortrait;
+        case UIInterfaceOrientationPortraitUpsideDown: return kIVGRSResourceOrientationPortraitUpsideDown;
+        case UIInterfaceOrientationLandscapeLeft: return kIVGRSResourceOrientationLandscapeLeft;
+        case UIInterfaceOrientationLandscapeRight: return kIVGRSResourceOrientationLandscapeRight;
+    }
+}
+
+kIVGRSResourceScale scaleFromScreenScaleAndSize(CGFloat screenScale, CGSize screenSize) {
+    if (screenScale == 2.0) {
+        if (screenSize.height == 568.0) {
+            return kIVGRSResourceScale568h2X;
+        } else {
+            return kIVGRSResourceScale2X;
+        }
+    } else {
+        return kIVGRSResourceScaleDefault;
+    }
+}
+
+kIVGRSResourceDevice deviceFromUserInterfaceIdiom(UIUserInterfaceIdiom userInterfaceIdiom) {
+    switch (userInterfaceIdiom) {
+        case UIUserInterfaceIdiomPad: return kIVGRSResourceDeviceiPad;
+        case UIUserInterfaceIdiomPhone: return kIVGRSResourceDeviceiPhone;
+    }
+}

@@ -31,7 +31,18 @@
     return array;
 }
 
-- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue 
+- (NSArray *) filterArray:(BOOL (^)(id element)) filterBlock;
+{
+    NSMutableArray *result = [NSMutableArray array];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (filterBlock(obj)) {
+            [result addObject:obj];
+        }
+    }];
+    return [NSArray arrayWithArray:result];
+}
+
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue
 {
     if (index < [self count]) {
         return [self objectAtIndex:index];

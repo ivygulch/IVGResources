@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Ivy Gulch, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "IVGRSConstants.h"
+
+kIVGRSResourceOrientation orientationFromInterfaceOrientation(UIInterfaceOrientation interfaceOrientation);
+kIVGRSResourceScale scaleFromScreenScaleAndSize(CGFloat screenScale, CGSize screenSize);
+kIVGRSResourceDevice deviceFrom(id d);
 
 NSString *combinedText(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device);
 

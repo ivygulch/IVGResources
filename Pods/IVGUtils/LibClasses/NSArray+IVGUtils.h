@@ -13,6 +13,8 @@
 
 - (NSArray *) randomized;
 - (NSArray *) reversedArray;
+- (NSArray *) filterArray:(BOOL (^)(id element)) filterBlock;
+
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 - (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
 
