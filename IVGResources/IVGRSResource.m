@@ -8,10 +8,31 @@
 
 #import "IVGRSResource.h"
 #import "IVGRSUtils.h"
-#import "NSArray+IVGUtils.h"
+//#import "NSArray+IVGUtils.h"
+
+
+const char *byte_to_binary(int16_t x)
+{
+    static char b[16];
+    b[0] = '\0';
+
+    int16_t start = 1 << 11;
+    int z;
+    for (z = start; z > 0; z >>= 1)
+    {
+        strcat(b, ((x & z) == z) ? "1" : "0");
+        if ((z == (1 << 6)) || (z == (1 << 3))) {
+            strcat(b, " ");
+        }
+    }
+
+    return b;
+}
+
+
 
 // return which mask values are a match for this particular interfaceOrientation
-kIVGRSResourceBitMask maskForInterfaceOrientation(UIInterfaceOrientation interfaceOrientation) {
+int16_t maskForInterfaceOrientation(UIInterfaceOrientation interfaceOrientation) {
     switch (interfaceOrientation) {
         case UIInterfaceOrientationPortrait: return kIVGRSResourceBitMask_orientation_generic | kIVGRSResourceBitMask_orientation_Portrait;
         case UIInterfaceOrientationPortraitUpsideDown: return kIVGRSResourceBitMask_orientation_generic | kIVGRSResourceBitMask_orientation_Portrait;
@@ -21,7 +42,7 @@ kIVGRSResourceBitMask maskForInterfaceOrientation(UIInterfaceOrientation interfa
 }
 
 // return which mask values are a match for this particular screen scale and size
-kIVGRSResourceBitMask maskForScreenScaleAndSize(CGFloat screenScale, CGSize screenSize) {
+int16_t maskForScreenScaleAndSize(CGFloat screenScale, CGSize screenSize) {
     if (screenScale == 2.0) {
         if (screenSize.height == 568.0) {
             return kIVGRSResourceBitMask_scale_generic | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_scale_568h;
@@ -34,25 +55,22 @@ kIVGRSResourceBitMask maskForScreenScaleAndSize(CGFloat screenScale, CGSize scre
 }
 
 // return which mask values are a match for this particular userInterfaceIdiom
-kIVGRSResourceBitMask maskForUserInterfaceIdiom(UIUserInterfaceIdiom userInterfaceIdiom) {
+int16_t maskForUserInterfaceIdiom(UIUserInterfaceIdiom userInterfaceIdiom) {
     switch (userInterfaceIdiom) {
         case UIUserInterfaceIdiomPad: return kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_device_ipad;
         case UIUserInterfaceIdiomPhone: return kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_device_iphone;
     }
 }
 
-kIVGRSResourceBitMask qualifierMask(UIInterfaceOrientation interfaceOrientation, CGFloat screenScale, CGSize screenSize, UIUserInterfaceIdiom userInterfaceIdiom) {
+int16_t qualifierMask(UIInterfaceOrientation interfaceOrientation, CGFloat screenScale, CGSize screenSize, UIUserInterfaceIdiom userInterfaceIdiom) {
     return maskForInterfaceOrientation(interfaceOrientation) | maskForScreenScaleAndSize(screenScale, screenSize) | maskForUserInterfaceIdiom(userInterfaceIdiom);
 }
 
-unsigned int countBits (unsigned int value) {
-    unsigned int count = 0;
-    while (value > 0) {           // until all bits are zero
-        if ((value & 1) == 1)     // check lower bit
-            count++;
-        value >>= 1;              // shift bits, removing lower bit
-    }
-    return count;
+NSUInteger priorityForMask(int16_t mask) {
+    NSUInteger orientationPriority = mask >> 6;
+    NSUInteger scalePriority = (mask & 0b111000) >> 3;
+    NSUInteger idiomPriority = (mask & 0b111);
+    return orientationPriority * scalePriority * idiomPriority;
 }
 
 @interface IVGRSResource()
@@ -62,22 +80,6 @@ unsigned int countBits (unsigned int value) {
 @end
 
 @implementation IVGRSResource
-
-+ (NSUInteger) bitCountForQualiferMask:(NSNumber *) number;
-{
-    static dispatch_once_t pred_bitCounts;
-    static NSMutableDictionary *_bitCounts = nil;
-    dispatch_once(&pred_bitCounts, ^{
-        _bitCounts = [NSMutableDictionary dictionary];
-    });
-    NSNumber *result = [_bitCounts objectForKey:number];
-    if (result == nil) {
-        NSUInteger bitCount = countBits([number integerValue]);
-        result = [NSNumber numberWithInteger:bitCount];
-        [_bitCounts setObject:result forKey:number];
-    }
-    return [result integerValue];
-}
 
 + (NSDictionary *) suffixes;
 {
@@ -129,6 +131,10 @@ unsigned int countBits (unsigned int value) {
           @"-Landscape@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_2X | kIVGRSResourceBitMask_orientation_Landscape),
           @"-Landscape-568h@2x~iphone":@(kIVGRSResourceBitMask_device_iphone | kIVGRSResourceBitMask_scale_568h | kIVGRSResourceBitMask_orientation_Landscape)
           };
+        NSLog(@"suffixes");
+        [_sharedInstance enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            NSLog(@"  %s: %@", byte_to_binary([obj integerValue]), key);
+        }];
     });
     return _sharedInstance;
 }
@@ -165,7 +171,7 @@ unsigned int countBits (unsigned int value) {
             if ([fileBaseName hasPrefix:self.baseName] && [fileExtension isEqualToString:self.extension]) {
                 NSString *fileQualifier = [fileBaseName substringFromIndex:baseLength];
                 NSString *qualifierMask = [[IVGRSResource suffixes] objectForKey:fileQualifier];
-                NSLog(@"%@: %2.2X", filename, [qualifierMask integerValue]);
+                NSLog(@"%@: %s", filename, byte_to_binary([qualifierMask integerValue]));
                 if (qualifierMask != nil) {
                     NSString *resourcePath = [directoryPath stringByAppendingPathComponent:filename];
                     [resourceInstances setObject:resourcePath forKey:qualifierMask];
@@ -176,6 +182,11 @@ unsigned int countBits (unsigned int value) {
     }
 }
 
+- (NSString *) bundleResourcePath;
+{
+    return [[NSBundle mainBundle] resourcePath];
+}
+
 - (void) rebuildResourceInstances;
 {
     NSMutableDictionary *resourceInstances = [NSMutableDictionary dictionaryWithCapacity:100];
@@ -183,7 +194,7 @@ unsigned int countBits (unsigned int value) {
     if (self.basePath != nil) {
         [self appendResourceInstances:resourceInstances withResourceNamesUsed:resourceNamesUsed fromDirectoryPath:self.basePath error:nil];
     }
-    [self appendResourceInstances:resourceInstances withResourceNamesUsed:resourceNamesUsed fromDirectoryPath:[[NSBundle mainBundle] resourcePath] error:nil];
+    [self appendResourceInstances:resourceInstances withResourceNamesUsed:resourceNamesUsed fromDirectoryPath:[self bundleResourcePath] error:nil];
     self.resourceInstances = [NSDictionary dictionaryWithDictionary:resourceInstances];
 }
 
@@ -216,19 +227,32 @@ unsigned int countBits (unsigned int value) {
             [resourcePathKeys addObject:key];
         }
     }];
-    [resourcePathKeys sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSUInteger bitCount1 = [IVGRSResource bitCountForQualiferMask:obj1];
-        NSUInteger bitCount2 = [IVGRSResource bitCountForQualiferMask:obj1];
-        if (bitCount1 < bitCount2) {
-            return NSOrderedAscending;
-        } else if (bitCount1 > bitCount2) {
-            return NSOrderedDescending;
+    NSLog(@"before resourcePathKeys");
+    for (NSNumber *k in resourcePathKeys) {
+        NSLog(@" %s: %@", byte_to_binary([k integerValue]), [[self.resourceInstances objectForKey:k] lastPathComponent]);
+    }
+    NSArray *sortedKeys = [resourcePathKeys sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSUInteger priority1 = priorityForMask([obj1 integerValue]);
+        NSUInteger priority2 = priorityForMask([obj2 integerValue]);
+        NSComparisonResult result;
+        if (priority2 < priority1) {
+            result = NSOrderedAscending;
+        } else if (priority2 > priority1) {
+            result =NSOrderedDescending;
         } else {
-            return NSOrderedSame;
+            result =NSOrderedSame;
         }
+        NSLog(@"    1=%s %d %@", byte_to_binary([obj1 integerValue]), priority1, [[self.resourceInstances objectForKey:obj1] lastPathComponent]);
+        NSLog(@"    2=%s %d %@", byte_to_binary([obj2 integerValue]), priority2, [[self.resourceInstances objectForKey:obj2] lastPathComponent]);
+        NSLog(@"  r=%d", result);
+        return result;
     }];
-    NSMutableArray *resourcePaths = [NSMutableArray arrayWithCapacity:[resourcePathKeys count]];
-    for (NSNumber *resourcePathKey in resourcePathKeys) {
+    NSLog(@"after resourcePathKeys");
+    for (NSNumber *k in sortedKeys) {
+        NSLog(@" %s: %@", byte_to_binary([k integerValue]), [[self.resourceInstances objectForKey:k] lastPathComponent]);
+    }
+    NSMutableArray *resourcePaths = [NSMutableArray arrayWithCapacity:[sortedKeys count]];
+    for (NSNumber *resourcePathKey in sortedKeys) {
         [resourcePaths addObject:[self.resourceInstances objectForKey:resourcePathKey]];
     }
     return resourcePaths;
@@ -243,7 +267,7 @@ unsigned int countBits (unsigned int value) {
                                                             screenScale:screenScale
                                                              screenSize:screenSize
                                                      userInterfaceIdiom:userInterfaceIdiom];
-    return [resourcePaths objectAtIndex:0 outOfRange:nil];
+    return [resourcePaths objectAtIndex:0];// outOfRange:nil];
 }
 
 
