@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281181789B044EA485B03EAE /* libPods-IVGResourcesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */; };
+		4EF6FE0CB0E5435CA1122737 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C802EE1D81BA42FEA24FBEA8 /* libPods.a */; };
 		F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
 		F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
 		F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
@@ -33,6 +35,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVGResourcesTests.xcconfig"; path = "Pods/Pods-IVGResourcesTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IVGResourcesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C802EE1D81BA42FEA24FBEA8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8691F4616C587E700334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
 		F8691F4E16C587E700334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 				F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */,
 				F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */,
 				F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */,
+				281181789B044EA485B03EAE /* libPods-IVGResourcesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +78,7 @@
 				F8B3214A16C46C29006E53CC /* CoreGraphics.framework in Frameworks */,
 				F8B3214816C46C1B006E53CC /* UIKit.framework in Frameworks */,
 				F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */,
+				4EF6FE0CB0E5435CA1122737 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +112,8 @@
 				F8691F4A16C587E700334C0D /* IVGResourcesTests */,
 				F8B3210F16C4620B006E53CC /* Frameworks */,
 				F8B3210E16C4620B006E53CC /* Products */,
+				6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */,
+				07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +133,8 @@
 				F8B3214716C46C1B006E53CC /* UIKit.framework */,
 				F8B3211016C4620B006E53CC /* Foundation.framework */,
 				F8B3211F16C4620B006E53CC /* SenTestingKit.framework */,
+				7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */,
+				C802EE1D81BA42FEA24FBEA8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +172,7 @@
 				F8691F4216C587E700334C0D /* Frameworks */,
 				F8691F4316C587E700334C0D /* Resources */,
 				F8691F4416C587E700334C0D /* ShellScript */,
+				161206AF6BA346C9B89E0DEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +190,7 @@
 				F8B3210916C4620B006E53CC /* Sources */,
 				F8B3210A16C4620B006E53CC /* Frameworks */,
 				F8B3210B16C4620B006E53CC /* CopyFiles */,
+				9CF5611F4D0B4C71866EE144 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +240,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		161206AF6BA346C9B89E0DEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-IVGResourcesTests-resources.sh\"\n";
+		};
+		9CF5611F4D0B4C71866EE144 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		F8691F4416C587E700334C0D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,11 +318,8 @@
 /* Begin XCBuildConfiguration section */
 		F8691F5516C587E700334C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IVGResourcesTests/IVGResourcesTests-Prefix.pch";
 				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
@@ -292,11 +331,8 @@
 		};
 		F8691F5616C587E700334C0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IVGResourcesTests/IVGResourcesTests-Prefix.pch";
 				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
@@ -361,6 +397,7 @@
 		};
 		F8B3213316C4620B006E53CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/IVGResources.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -372,6 +409,7 @@
 		};
 		F8B3213416C4620B006E53CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/IVGResources.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -391,6 +429,7 @@
 				F8691F5616C587E700334C0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8B3210816C4620B006E53CC /* Build configuration list for PBXProject "IVGResources" */ = {
 			isa = XCConfigurationList;
