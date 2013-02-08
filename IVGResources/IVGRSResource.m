@@ -8,6 +8,10 @@
 
 #import "IVGRSResource.h"
 
+NSNumber *makekey(kIVGRSResourceOrientation orientation, kIVGRSResourceScale scale, kIVGRSResourceDevice device) {
+    return [NSNumber numberWithInteger:(combinedPriority(orientation,scale,device) << 24) | (orientation << 16) | (scale << 8) | device];
+}
+
 @interface IVGRSResource()
 @property (nonatomic,copy,readonly) NSString *baseName;
 @property (nonatomic,copy,readonly) NSString *extension;
@@ -15,6 +19,26 @@
 @end
 
 @implementation IVGRSResource
+
++ (NSDictionary *) suffixes;
+{
+    static dispatch_once_t pred_shared_instance;
+    static NSDictionary *_sharedInstance = nil;
+    dispatch_once(&pred_shared_instance, ^{
+        NSMutableDictionary *instances = [NSMutableDictionary dictionaryWithCapacity:48];
+        for (kIVGRSResourceOrientation orientation=kIVGRSResourceOrientationMin; orientation<=kIVGRSResourceOrientationMax; orientation++) {
+            for(kIVGRSResourceScale scale=kIVGRSResourceScaleMin; scale<=kIVGRSResourceScaleMax; scale++) {
+                for (kIVGRSResourceDevice device=kIVGRSResourceDeviceMin; device<=kIVGRSResourceDeviceMax; device++) {
+                    [instances setObject:makekey(orientation,scale,device) forKey:combinedText(orientation,scale,device)];
+                }
+            }
+        }
+
+        _sharedInstance = [NSDictionary dictionaryWithDictionary:instances];
+    });
+    return _sharedInstance;
+}
+
 
 - (id) initWithBasePath:(NSString *) basePath name:(NSString *) name;
 {
@@ -53,7 +77,6 @@
     }
  */
 }
-
 - (void) rebuildResourceInstances;
 {
     NSMutableDictionary *resourceInstances = [NSMutableDictionary dictionaryWithCapacity:100];

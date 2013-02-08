@@ -14,9 +14,8 @@
                                                 fileBaseName:(NSString *) fileBaseName
                                                    extension:extension;
 {
-    NSCharacterSet *cs = [NSCharacterSet characterSetWithCharactersInString:@"-~@"];
-    NSArray *components = [fileBaseName componentsSeparatedByCharactersInSet:cs];
 
+    return nil;
 }
 
 @end
