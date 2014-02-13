@@ -53,6 +53,7 @@
 		6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVGResourcesTests.xcconfig"; path = "Pods/Pods-IVGResourcesTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IVGResourcesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C802EE1D81BA42FEA24FBEA8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80870D918AD3DEB008F8776 /* IVGResources.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGResources.podspec; sourceTree = "<group>"; };
 		F8691F4616C587E700334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
 		F8691F4E16C587E700334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		F8B3210416C4620B006E53CC = {
 			isa = PBXGroup;
 			children = (
+				F80870D918AD3DEB008F8776 /* IVGResources.podspec */,
 				F8B3211216C4620B006E53CC /* IVGResources */,
 				F8691F4A16C587E700334C0D /* IVGResourcesTests */,
 				F8B3210F16C4620B006E53CC /* Frameworks */,
