@@ -13,6 +13,6 @@
 @interface UILabel(IVGUtils)
 - (void)alignTop;
 - (void)alignBottom;
-- (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(UILineBreakMode) lineBreakMode;
+- (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(NSLineBreakMode) lineBreakMode;
 
 @end

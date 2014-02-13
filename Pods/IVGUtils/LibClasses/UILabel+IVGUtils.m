@@ -32,7 +32,7 @@
         self.text = [NSString stringWithFormat:@" \n%@",self.text];
 }
 
-- (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(UILineBreakMode) lineBreakMode {
+- (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(NSLineBreakMode) lineBreakMode {
     // calculate new size, but all we really want is the height
     CGSize originalSize = self.bounds.size;
     CGSize newSize = [text sizeWithFont:self.font constrainedToSize:originalSize lineBreakMode:lineBreakMode];

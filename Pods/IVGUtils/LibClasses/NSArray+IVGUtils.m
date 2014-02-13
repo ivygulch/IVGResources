@@ -11,7 +11,7 @@
 
 @implementation NSArray (IVGUtils)
 
-- (NSArray *) randomized {
+- (NSArray *) arrayByRandomizing {
     NSMutableArray *arrayCopy = [NSMutableArray arrayWithArray:self];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[self count]];
     while ([arrayCopy count] > 0) {
@@ -19,30 +19,49 @@
         [result addObject:[arrayCopy objectAtIndex:idx]];
         [arrayCopy removeObjectAtIndex:idx];
     }
-    return result;
+    return [result copy];
 }
 
-- (NSArray *) reversedArray {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+- (NSArray *) arrayByReversing {
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
     for (id element in enumerator) {
-        [array addObject:element];
+        [result addObject:element];
     }
-    return array;
+    return [result copy];
 }
 
-- (NSArray *) filterArray:(BOOL (^)(id element)) filterBlock;
+- (NSArray *) arrayByTransforming:(id(^)(id)) transformationBlock;
 {
-    NSMutableArray *result = [NSMutableArray array];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (filterBlock(obj)) {
-            [result addObject:obj];
-        }
-    }];
-    return [NSArray arrayWithArray:result];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id originalValue in self) {
+        [result addObject:transformationBlock(originalValue)];
+    }
+    return [result copy];
 }
 
-- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue
+- (NSArray *) arrayByFiltering:(BOOL(^)(id)) filterBlock;
+{
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id originalValue in self) {
+        if (filterBlock(originalValue)) {
+            [result addObject:originalValue];
+        }
+    }
+    return [result copy];
+}
+
+- (BOOL) applyBlock:(BOOL(^)(id obj)) block;
+{
+    for (id value in self) {
+        if (!block(value)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue 
 {
     if (index < [self count]) {
         return [self objectAtIndex:index];
@@ -53,17 +72,26 @@
 
 - (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
 {
+    return [self stringWithPrefix:@"[" delimiter:delimiter suffix:@"]"];
+}
+
+- (NSString *) stringWithPrefix:(NSString *) prefix delimiter:(NSString *) delimiter suffix:(NSString *) suffix;
+{
     NSMutableString *ms = [NSMutableString string];
-    NSString *sep = @"[";
+    if (prefix != nil) {
+        [ms appendString:prefix];
+    }
+    NSString *sep = @"";
     for (id value in self) {
         [ms appendString:sep];
         [ms appendString:[NSString stringWithFormat:@"%@", value]];
         sep = delimiter;
     }
-    [ms appendString:@"]"];
+    if (suffix != nil) {
+        [ms appendString:suffix];
+    }
     return [NSString stringWithString:ms];
 }
-
 
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ...  {
     NSMutableArray *result = [NSMutableArray array];
@@ -81,7 +109,7 @@
     }
     va_end(args);
     
-    return result;
+    return [result copy];
 }
 
 @end

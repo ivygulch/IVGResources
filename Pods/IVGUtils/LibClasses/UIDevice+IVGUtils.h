@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define UIInterfaceOrientationIsLandscapeOrPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait  || (orientation) == UIInterfaceOrientationPortraitUpsideDown || (orientation) == UIInterfaceOrientationLandscapeLeft  || (orientation) == UIInterfaceOrientationLandscapeRight)
+#define RUNNING_ON_IOS7 ([UIDevice systemVersionAsFloat] >= 7.0)
 
 @interface UIDevice (IVGUtils)
 
@@ -16,10 +17,9 @@
 - (BOOL) isLimitedMachine;
 
 + (BOOL) isRunningOniPad;
-+ (BOOL) isPortrait;
-+ (BOOL) isLandscape;
++ (BOOL) isDevicePortrait;
++ (BOOL) isDeviceLandscape;
 + (UIDeviceOrientation) deviceOrientation;
-+ (NSInteger) getSystemVersionAsAnInteger;
-+ (BOOL) systemVersionIsAtLeast:(NSInteger) minimumVersion;
++ (CGFloat) systemVersionAsFloat;
 
 @end

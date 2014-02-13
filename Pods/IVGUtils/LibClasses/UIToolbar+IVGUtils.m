@@ -26,7 +26,7 @@
     result.backgroundColor = [UIColor clearColor];
     result.textColor = textColor;
     result.shadowColor = shadowColor;
-    result.textAlignment = UITextAlignmentCenter;
+    result.textAlignment = NSTextAlignmentCenter;
     result.userInteractionEnabled = NO;
     result.adjustsFontSizeToFitWidth = YES;
     result.autoresizingMask = UIViewAutoresizingFlexibleWidth;

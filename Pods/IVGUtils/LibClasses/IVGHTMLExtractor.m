@@ -30,17 +30,33 @@
 
 #pragma mark - extraction methods
 
-- (void) extractId:(NSString *) idToExtract fromURL:(NSString *) urlStr withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
+- (UIWebView *) newExtractionWebViewWithExtractId:(NSString *) idToExtract returnBlock:(IVGHTMLReturnBlock) returnBlock;
 {
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
     [webView setAssociatedUserInfoObject:idToExtract forKey:AOKEY_ID_TO_EXTRACT];
     [webView setAssociatedUserInfoObject:returnBlock forKey:AOKEY_RETURN_BLOCK];
     [self.webViews addObject:webView];
+    return webView;
+}
 
-    NSURL *url = [NSURL URLWithString:urlStr];
+- (void) extractId:(NSString *) idToExtract fromURL:(NSURL *) url withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
+{
+    UIWebView *webView = [self newExtractionWebViewWithExtractId:idToExtract returnBlock:returnBlock];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
+}
+
+- (void) extractId:(NSString *) idToExtract fromHTML:(NSString *) html withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
+{
+    UIWebView *webView = [self newExtractionWebViewWithExtractId:idToExtract returnBlock:returnBlock];
+    [webView loadHTMLString:html baseURL:nil];
+}
+
+- (void) extractId:(NSString *) idToExtract fromData:(NSData *) data withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
+{
+    UIWebView *webView = [self newExtractionWebViewWithExtractId:idToExtract returnBlock:returnBlock];
+    [webView loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView;

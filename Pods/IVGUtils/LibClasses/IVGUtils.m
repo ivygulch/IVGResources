@@ -7,6 +7,7 @@
 //
 
 #import "IVGUtils.h"
+#import "NSString+IVGUtils.h"
 
 @implementation IVGUtils
 
@@ -36,10 +37,6 @@
 
 + (id) ifNil:(id) value use:(id) defaultValue {
     return value ? value : defaultValue;
-}
-
-+ (BOOL) haveValue:(NSString *) value {
-    return (value != nil) && ([value length] > 0);
 }
 
 + (void) showAlertViewTitle:(NSString *) title 

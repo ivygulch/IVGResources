@@ -76,11 +76,11 @@
 	return isRunningOniPad;
 }
 
-+ (BOOL) isPortrait {
++ (BOOL) isDevicePortrait {
     return UIDeviceOrientationIsPortrait([UIDevice deviceOrientation]);
 }
 
-+ (BOOL) isLandscape {
++ (BOOL) isDeviceLandscape {
     return UIDeviceOrientationIsLandscape([UIDevice deviceOrientation]);
 }
 
@@ -88,11 +88,13 @@
     return [[UIDevice currentDevice] orientation];
 }
 
-+ (NSInteger) getSystemVersionAsAnInteger{
++ (CGFloat) systemVersionAsFloat;
+{
     int index = 0;
     NSInteger version = 0;
     NSArray* digits = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
-    NSInteger multiplier = 10000;
+    NSInteger baseMultiplier = 10000;
+    NSInteger multiplier = baseMultiplier;
     for (NSString *number in digits) {
         if (index>2) {
             break;
@@ -101,11 +103,7 @@
         multiplier /= 100;
         index++;
     }
-    return version;
-}
-
-+ (BOOL) systemVersionIsAtLeast:(NSInteger) minimumVersion {
-    return [self getSystemVersionAsAnInteger] >= minimumVersion;
+    return ((float) version) / baseMultiplier;
 }
 
 @end

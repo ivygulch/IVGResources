@@ -1,7 +1,5 @@
-ALWAYS_SEARCH_USER_PATHS = YES
-HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
-OTHER_LDFLAGS = -ObjC -framework CoreData -framework CoreGraphics -framework Foundation -framework UIKit
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Kiwi" "${PODS_ROOT}/BuildHeaders/IVGUtils"
-PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Kiwi" "${PODS_ROOT}/Headers/IVGUtils"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/IVGUtils" "${PODS_ROOT}/Headers/Kiwi"
+OTHER_CFLAGS = $(inherited) "-isystem${PODS_ROOT}/Headers" "-isystem${PODS_ROOT}/Headers/IVGUtils" "-isystem${PODS_ROOT}/Headers/Kiwi"
+OTHER_LDFLAGS = -ObjC -framework CoreGraphics -framework Foundation -framework QuartzCore -framework UIKit
 PODS_ROOT = ${SRCROOT}/Pods

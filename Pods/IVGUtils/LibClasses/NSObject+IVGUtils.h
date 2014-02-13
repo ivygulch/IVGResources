@@ -20,4 +20,6 @@
 - (void) setAssociatedFloatValue:(CGFloat) value forKey:(id) key;
 - (NSString *) debugId;
 
+- (id) asDictionaryKey;
+
 @end

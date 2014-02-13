@@ -15,7 +15,6 @@
 + (NSDate *) dateFromString:(NSString *) value withFormat:(NSString *) format;
 
 + (id) ifNil:(id) value use:(id) defaultValue;
-+ (BOOL) haveValue:(NSString *) value;
 
 + (void) showAlertViewTitle:(NSString *) title 
                     message:(NSString *) message 

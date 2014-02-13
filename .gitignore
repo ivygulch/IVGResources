@@ -10,3 +10,6 @@ xcshareddata
 # osx noise
 .DS_Store
 profile
+
+# cocoapods
+Pods

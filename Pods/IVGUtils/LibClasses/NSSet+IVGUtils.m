@@ -12,7 +12,7 @@
 @implementation NSSet (IVGUtils)
 
 - (NSArray *) randomizedArray {
-    return [[self allObjects] randomized];
+    return [[self allObjects] arrayByRandomizing];
 }
 
 @end
