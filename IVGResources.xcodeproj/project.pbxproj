@@ -1,486 +1,1143 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		281181789B044EA485B03EAE /* libPods-IVGResourcesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */; };
-		4EF6FE0CB0E5435CA1122737 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C802EE1D81BA42FEA24FBEA8 /* libPods.a */; };
-		F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211F16C4620B006E53CC /* SenTestingKit.framework */; };
-		F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
-		F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
-		F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8691F4D16C587E700334C0D /* InfoPlist.strings */; };
-		F8691F5A16C5898700334C0D /* IVGRSResourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */; };
-		F8691F5B16C5898700334C0D /* testIVGRSResource.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F5816C5898700334C0D /* testIVGRSResource.txt */; };
-		F8691F5C16C5898700334C0D /* testIVGRSResource@2x.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */; };
-		F8691F5F16C589F000334C0D /* libIVGResources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3210D16C4620B006E53CC /* libIVGResources.a */; };
-		F8691F6016C58A0900334C0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214916C46C29006E53CC /* CoreGraphics.framework */; };
-		F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */; };
-		F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3211016C4620B006E53CC /* Foundation.framework */; };
-		F8B3213D16C464E5006E53CC /* IVGRSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3213C16C464E5006E53CC /* IVGRSConstants.m */; };
-		F8B3214316C4658F006E53CC /* IVGRSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3214216C4658F006E53CC /* IVGRSResource.m */; };
-		F8B3214816C46C1B006E53CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214716C46C1B006E53CC /* UIKit.framework */; };
-		F8B3214A16C46C29006E53CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3214916C46C29006E53CC /* CoreGraphics.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F8691F5D16C589E900334C0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8B3210516C4620B006E53CC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8B3210C16C4620B006E53CC;
-			remoteInfo = IVGResources;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F8B3210B16C4620B006E53CC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVGResourcesTests.xcconfig"; path = "Pods/Pods-IVGResourcesTests.xcconfig"; sourceTree = SOURCE_ROOT; };
-		7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IVGResourcesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C802EE1D81BA42FEA24FBEA8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F80870D918AD3DEB008F8776 /* IVGResources.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGResources.podspec; sourceTree = "<group>"; };
-		F8691F4616C587E700334C0D /* IVGResourcesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVGResourcesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IVGResourcesTests-Info.plist"; sourceTree = "<group>"; };
-		F8691F4E16C587E700334C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8691F5316C587E700334C0D /* IVGResourcesTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResourcesTests-Prefix.pch"; sourceTree = "<group>"; };
-		F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSResourceSpec.m; sourceTree = "<group>"; };
-		F8691F5816C5898700334C0D /* testIVGRSResource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testIVGRSResource.txt; sourceTree = "<group>"; };
-		F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "testIVGRSResource@2x.txt"; sourceTree = "<group>"; };
-		F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSUtils.h; sourceTree = "<group>"; };
-		F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSUtils.m; sourceTree = "<group>"; };
-		F8B3210D16C4620B006E53CC /* libIVGResources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGResources.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B3211016C4620B006E53CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F8B3211416C4620B006E53CC /* IVGResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGResources-Prefix.pch"; sourceTree = "<group>"; };
-		F8B3211F16C4620B006E53CC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F8B3213B16C464E5006E53CC /* IVGRSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSConstants.h; sourceTree = "<group>"; };
-		F8B3213C16C464E5006E53CC /* IVGRSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSConstants.m; sourceTree = "<group>"; };
-		F8B3214116C4658F006E53CC /* IVGRSResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGRSResource.h; sourceTree = "<group>"; };
-		F8B3214216C4658F006E53CC /* IVGRSResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGRSResource.m; sourceTree = "<group>"; };
-		F8B3214716C46C1B006E53CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F8B3214916C46C29006E53CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		F8691F4216C587E700334C0D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8691F6016C58A0900334C0D /* CoreGraphics.framework in Frameworks */,
-				F8691F5F16C589F000334C0D /* libIVGResources.a in Frameworks */,
-				F8691F4716C587E700334C0D /* SenTestingKit.framework in Frameworks */,
-				F8691F4816C587E700334C0D /* UIKit.framework in Frameworks */,
-				F8691F4916C587E700334C0D /* Foundation.framework in Frameworks */,
-				281181789B044EA485B03EAE /* libPods-IVGResourcesTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8B3210A16C4620B006E53CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8B3214A16C46C29006E53CC /* CoreGraphics.framework in Frameworks */,
-				F8B3214816C46C1B006E53CC /* UIKit.framework in Frameworks */,
-				F8B3211116C4620B006E53CC /* Foundation.framework in Frameworks */,
-				4EF6FE0CB0E5435CA1122737 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		F8691F4A16C587E700334C0D /* IVGResourcesTests */ = {
-			isa = PBXGroup;
-			children = (
-				F8691F5816C5898700334C0D /* testIVGRSResource.txt */,
-				F8691F5916C5898700334C0D /* testIVGRSResource@2x.txt */,
-				F8691F5716C5898700334C0D /* IVGRSResourceSpec.m */,
-				F8691F4B16C587E700334C0D /* Supporting Files */,
-			);
-			path = IVGResourcesTests;
-			sourceTree = "<group>";
-		};
-		F8691F4B16C587E700334C0D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F8691F4C16C587E700334C0D /* IVGResourcesTests-Info.plist */,
-				F8691F4D16C587E700334C0D /* InfoPlist.strings */,
-				F8691F5316C587E700334C0D /* IVGResourcesTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F8B3210416C4620B006E53CC = {
-			isa = PBXGroup;
-			children = (
-				F80870D918AD3DEB008F8776 /* IVGResources.podspec */,
-				F8B3211216C4620B006E53CC /* IVGResources */,
-				F8691F4A16C587E700334C0D /* IVGResourcesTests */,
-				F8B3210F16C4620B006E53CC /* Frameworks */,
-				F8B3210E16C4620B006E53CC /* Products */,
-				6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */,
-				07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */,
-			);
-			sourceTree = "<group>";
-		};
-		F8B3210E16C4620B006E53CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F8B3210D16C4620B006E53CC /* libIVGResources.a */,
-				F8691F4616C587E700334C0D /* IVGResourcesTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F8B3210F16C4620B006E53CC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F8B3214916C46C29006E53CC /* CoreGraphics.framework */,
-				F8B3214716C46C1B006E53CC /* UIKit.framework */,
-				F8B3211016C4620B006E53CC /* Foundation.framework */,
-				F8B3211F16C4620B006E53CC /* SenTestingKit.framework */,
-				7564CDBC235D461CA92BED0B /* libPods-IVGResourcesTests.a */,
-				C802EE1D81BA42FEA24FBEA8 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8B3211216C4620B006E53CC /* IVGResources */ = {
-			isa = PBXGroup;
-			children = (
-				F8B3213B16C464E5006E53CC /* IVGRSConstants.h */,
-				F8B3213C16C464E5006E53CC /* IVGRSConstants.m */,
-				F8AE34BC16C4AA68005A2965 /* IVGRSUtils.h */,
-				F8AE34BD16C4AA68005A2965 /* IVGRSUtils.m */,
-				F8B3214116C4658F006E53CC /* IVGRSResource.h */,
-				F8B3214216C4658F006E53CC /* IVGRSResource.m */,
-				F8B3211316C4620B006E53CC /* Supporting Files */,
-			);
-			path = IVGResources;
-			sourceTree = "<group>";
-		};
-		F8B3211316C4620B006E53CC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F8B3211416C4620B006E53CC /* IVGResources-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		F8691F4516C587E700334C0D /* IVGResourcesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8691F5416C587E700334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */;
-			buildPhases = (
-				F8691F4116C587E700334C0D /* Sources */,
-				F8691F4216C587E700334C0D /* Frameworks */,
-				F8691F4316C587E700334C0D /* Resources */,
-				F8691F4416C587E700334C0D /* ShellScript */,
-				161206AF6BA346C9B89E0DEB /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F8691F5E16C589E900334C0D /* PBXTargetDependency */,
-			);
-			name = IVGResourcesTests;
-			productName = IVGResourcesTests;
-			productReference = F8691F4616C587E700334C0D /* IVGResourcesTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-		F8B3210C16C4620B006E53CC /* IVGResources */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8B3213216C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResources" */;
-			buildPhases = (
-				F8B3210916C4620B006E53CC /* Sources */,
-				F8B3210A16C4620B006E53CC /* Frameworks */,
-				F8B3210B16C4620B006E53CC /* CopyFiles */,
-				9CF5611F4D0B4C71866EE144 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IVGResources;
-			productName = IVGResources;
-			productReference = F8B3210D16C4620B006E53CC /* libIVGResources.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		F8B3210516C4620B006E53CC /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Ivy Gulch, LLC";
-			};
-			buildConfigurationList = F8B3210816C4620B006E53CC /* Build configuration list for PBXProject "IVGResources" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = F8B3210416C4620B006E53CC;
-			productRefGroup = F8B3210E16C4620B006E53CC /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				F8B3210C16C4620B006E53CC /* IVGResources */,
-				F8691F4516C587E700334C0D /* IVGResourcesTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		F8691F4316C587E700334C0D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8691F4F16C587E700334C0D /* InfoPlist.strings in Resources */,
-				F8691F5B16C5898700334C0D /* testIVGRSResource.txt in Resources */,
-				F8691F5C16C5898700334C0D /* testIVGRSResource@2x.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		161206AF6BA346C9B89E0DEB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-IVGResourcesTests-resources.sh\"\n";
-		};
-		9CF5611F4D0B4C71866EE144 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
-		F8691F4416C587E700334C0D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		F8691F4116C587E700334C0D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8691F5A16C5898700334C0D /* IVGRSResourceSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8B3210916C4620B006E53CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8B3213D16C464E5006E53CC /* IVGRSConstants.m in Sources */,
-				F8B3214316C4658F006E53CC /* IVGRSResource.m in Sources */,
-				F8AE34BE16C4AA68005A2965 /* IVGRSUtils.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F8691F5E16C589E900334C0D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8B3210C16C4620B006E53CC /* IVGResources */;
-			targetProxy = F8691F5D16C589E900334C0D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F8691F4D16C587E700334C0D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8691F4E16C587E700334C0D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		F8691F5516C587E700334C0D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IVGResourcesTests/IVGResourcesTests-Prefix.pch";
-				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		F8691F5616C587E700334C0D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EB0A40B10C5433CB7D61FE1 /* Pods-IVGResourcesTests.xcconfig */;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IVGResourcesTests/IVGResourcesTests-Prefix.pch";
-				INFOPLIST_FILE = "IVGResourcesTests/IVGResourcesTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-		F8B3213016C4620B006E53CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		F8B3213116C4620B006E53CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F8B3213316C4620B006E53CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */;
-			buildSettings = {
-				DSTROOT = /tmp/IVGResources.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F8B3213416C4620B006E53CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07BB665A5A2B47F7925A3D8B /* Pods.xcconfig */;
-			buildSettings = {
-				DSTROOT = /tmp/IVGResources.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IVGResources/IVGResources-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		F8691F5416C587E700334C0D /* Build configuration list for PBXNativeTarget "IVGResourcesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8691F5516C587E700334C0D /* Debug */,
-				F8691F5616C587E700334C0D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8B3210816C4620B006E53CC /* Build configuration list for PBXProject "IVGResources" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8B3213016C4620B006E53CC /* Debug */,
-				F8B3213116C4620B006E53CC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8B3213216C4620B006E53CC /* Build configuration list for PBXNativeTarget "IVGResources" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8B3213316C4620B006E53CC /* Debug */,
-				F8B3213416C4620B006E53CC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = F8B3210516C4620B006E53CC /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0C0C5D22E91249B6950FD28E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-IVGResourcesTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>21FDD73E62634555A2E3B8CA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>24C9D565F58840A0BF724BD0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0C0C5D22E91249B6950FD28E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2C6007C7ABF94052B46724E5</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>90745D00A9064CA2B2CB0D79</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>A533EC740B4B4D1DB402EE36</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AD39ADA932454245A6E91898</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>BEF9D964AF3A4C92955B8FBD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C6007C7ABF94052B46724E5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F16FBD30D8424A1CAB83DA2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-IVGResourcesTests.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods-IVGResourcesTests.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F80870D918AD3DEB008F8776</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>IVGResources.podspec</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4116C587E700334C0D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F8691F5A16C5898700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8691F4216C587E700334C0D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F8691F6016C58A0900334C0D</string>
+				<string>F8691F5F16C589F000334C0D</string>
+				<string>F8691F4716C587E700334C0D</string>
+				<string>F8691F4816C587E700334C0D</string>
+				<string>F8691F4916C587E700334C0D</string>
+				<string>24C9D565F58840A0BF724BD0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8691F4316C587E700334C0D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F8691F4F16C587E700334C0D</string>
+				<string>F8691F5B16C5898700334C0D</string>
+				<string>F8691F5C16C5898700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8691F4416C587E700334C0D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string># Run the unit tests in this test bundle.
+"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
+</string>
+		</dict>
+		<key>F8691F4516C587E700334C0D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F8691F5416C587E700334C0D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AD39ADA932454245A6E91898</string>
+				<string>F8691F4116C587E700334C0D</string>
+				<string>F8691F4216C587E700334C0D</string>
+				<string>F8691F4316C587E700334C0D</string>
+				<string>F8691F4416C587E700334C0D</string>
+				<string>FF29273705204E47A83FC95E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>F8691F5E16C589E900334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>IVGResourcesTests</string>
+			<key>productName</key>
+			<string>IVGResourcesTests</string>
+			<key>productReference</key>
+			<string>F8691F4616C587E700334C0D</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>F8691F4616C587E700334C0D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>IVGResourcesTests.octest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F8691F4716C587E700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3211F16C4620B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F4816C587E700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3214716C46C1B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F4916C587E700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3211016C4620B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F4A16C587E700334C0D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8691F5816C5898700334C0D</string>
+				<string>F8691F5916C5898700334C0D</string>
+				<string>F8691F5716C5898700334C0D</string>
+				<string>F8691F4B16C587E700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>IVGResourcesTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4B16C587E700334C0D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8691F4C16C587E700334C0D</string>
+				<string>F8691F4D16C587E700334C0D</string>
+				<string>F8691F5316C587E700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4C16C587E700334C0D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>IVGResourcesTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4D16C587E700334C0D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8691F4E16C587E700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4E16C587E700334C0D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F4F16C587E700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8691F4D16C587E700334C0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F5316C587E700334C0D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>IVGResourcesTests-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F5416C587E700334C0D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F8691F5516C587E700334C0D</string>
+				<string>F8691F5616C587E700334C0D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F8691F5516C587E700334C0D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F16FBD30D8424A1CAB83DA2F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>IVGResourcesTests/IVGResourcesTests-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>IVGResourcesTests/IVGResourcesTests-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.1</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F8691F5616C587E700334C0D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F16FBD30D8424A1CAB83DA2F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>IVGResourcesTests/IVGResourcesTests-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>IVGResourcesTests/IVGResourcesTests-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.1</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F8691F5716C5898700334C0D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>IVGRSResourceSpec.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F5816C5898700334C0D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>testIVGRSResource.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F5916C5898700334C0D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>testIVGRSResource@2x.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8691F5A16C5898700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8691F5716C5898700334C0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F5B16C5898700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8691F5816C5898700334C0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F5C16C5898700334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8691F5916C5898700334C0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F5D16C589E900334C0D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>F8B3210516C4620B006E53CC</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F8B3210C16C4620B006E53CC</string>
+			<key>remoteInfo</key>
+			<string>IVGResources</string>
+		</dict>
+		<key>F8691F5E16C589E900334C0D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>F8B3210C16C4620B006E53CC</string>
+			<key>targetProxy</key>
+			<string>F8691F5D16C589E900334C0D</string>
+		</dict>
+		<key>F8691F5F16C589F000334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3210D16C4620B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8691F6016C58A0900334C0D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3214916C46C29006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8AE34BC16C4AA68005A2965</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>IVGRSUtils.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8AE34BD16C4AA68005A2965</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>IVGRSUtils.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8AE34BE16C4AA68005A2965</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8AE34BD16C4AA68005A2965</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8B3210416C4620B006E53CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F80870D918AD3DEB008F8776</string>
+				<string>F8B3211216C4620B006E53CC</string>
+				<string>F8691F4A16C587E700334C0D</string>
+				<string>F8B3210F16C4620B006E53CC</string>
+				<string>F8B3210E16C4620B006E53CC</string>
+				<string>A533EC740B4B4D1DB402EE36</string>
+				<string>F16FBD30D8424A1CAB83DA2F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3210516C4620B006E53CC</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0460</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Ivy Gulch, LLC</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>F8B3210816C4620B006E53CC</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>F8B3210416C4620B006E53CC</string>
+			<key>productRefGroup</key>
+			<string>F8B3210E16C4620B006E53CC</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>F8B3210C16C4620B006E53CC</string>
+				<string>F8691F4516C587E700334C0D</string>
+			</array>
+		</dict>
+		<key>F8B3210816C4620B006E53CC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F8B3213016C4620B006E53CC</string>
+				<string>F8B3213116C4620B006E53CC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F8B3210916C4620B006E53CC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F8B3213D16C464E5006E53CC</string>
+				<string>F8B3214316C4658F006E53CC</string>
+				<string>F8AE34BE16C4AA68005A2965</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8B3210A16C4620B006E53CC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F8B3214A16C46C29006E53CC</string>
+				<string>F8B3214816C46C1B006E53CC</string>
+				<string>F8B3211116C4620B006E53CC</string>
+				<string>BEF9D964AF3A4C92955B8FBD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8B3210B16C4620B006E53CC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string>include/${PRODUCT_NAME}</string>
+			<key>dstSubfolderSpec</key>
+			<string>16</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F8B3210C16C4620B006E53CC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F8B3213216C4620B006E53CC</string>
+			<key>buildPhases</key>
+			<array>
+				<string>90745D00A9064CA2B2CB0D79</string>
+				<string>F8B3210916C4620B006E53CC</string>
+				<string>F8B3210A16C4620B006E53CC</string>
+				<string>F8B3210B16C4620B006E53CC</string>
+				<string>21FDD73E62634555A2E3B8CA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>IVGResources</string>
+			<key>productName</key>
+			<string>IVGResources</string>
+			<key>productReference</key>
+			<string>F8B3210D16C4620B006E53CC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>F8B3210D16C4620B006E53CC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libIVGResources.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F8B3210E16C4620B006E53CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8B3210D16C4620B006E53CC</string>
+				<string>F8691F4616C587E700334C0D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3210F16C4620B006E53CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8B3214916C46C29006E53CC</string>
+				<string>F8B3214716C46C1B006E53CC</string>
+				<string>F8B3211016C4620B006E53CC</string>
+				<string>F8B3211F16C4620B006E53CC</string>
+				<string>2C6007C7ABF94052B46724E5</string>
+				<string>0C0C5D22E91249B6950FD28E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3211016C4620B006E53CC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>F8B3211116C4620B006E53CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3211016C4620B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8B3211216C4620B006E53CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8B3213B16C464E5006E53CC</string>
+				<string>F8B3213C16C464E5006E53CC</string>
+				<string>F8AE34BC16C4AA68005A2965</string>
+				<string>F8AE34BD16C4AA68005A2965</string>
+				<string>F8B3214116C4658F006E53CC</string>
+				<string>F8B3214216C4658F006E53CC</string>
+				<string>F8B3211316C4620B006E53CC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>IVGResources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3211316C4620B006E53CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F8B3211416C4620B006E53CC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3211416C4620B006E53CC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>IVGResources-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3211F16C4620B006E53CC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SenTestingKit.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/SenTestingKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>F8B3213016C4620B006E53CC</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F8B3213116C4620B006E53CC</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F8B3213216C4620B006E53CC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F8B3213316C4620B006E53CC</string>
+				<string>F8B3213416C4620B006E53CC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F8B3213316C4620B006E53CC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A533EC740B4B4D1DB402EE36</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/IVGResources.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>IVGResources/IVGResources-Prefix.pch</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F8B3213416C4620B006E53CC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A533EC740B4B4D1DB402EE36</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/IVGResources.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>IVGResources/IVGResources-Prefix.pch</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F8B3213B16C464E5006E53CC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>IVGRSConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3213C16C464E5006E53CC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>IVGRSConstants.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3213D16C464E5006E53CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3213C16C464E5006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8B3214116C4658F006E53CC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>IVGRSResource.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3214216C4658F006E53CC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>IVGRSResource.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F8B3214316C4658F006E53CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3214216C4658F006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8B3214716C46C1B006E53CC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>F8B3214816C46C1B006E53CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3214716C46C1B006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8B3214916C46C29006E53CC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>F8B3214A16C46C29006E53CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F8B3214916C46C29006E53CC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF29273705204E47A83FC95E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-IVGResourcesTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>F8B3210516C4620B006E53CC</string>
+</dict>
+</plist>
