@@ -17,6 +17,7 @@ int16_t maskForInterfaceOrientation(UIInterfaceOrientation interfaceOrientation)
         case UIInterfaceOrientationPortraitUpsideDown: return kIVGRSResourceBitMask_orientation_generic | kIVGRSResourceBitMask_orientation_Portrait;
         case UIInterfaceOrientationLandscapeLeft: return kIVGRSResourceBitMask_orientation_generic | kIVGRSResourceBitMask_orientation_Landscape | kIVGRSResourceBitMask_orientation_LandscapeLeft;
         case UIInterfaceOrientationLandscapeRight: return kIVGRSResourceBitMask_orientation_generic | kIVGRSResourceBitMask_orientation_Landscape | kIVGRSResourceBitMask_orientation_LandscapeRight;
+        default: return 0;
     }
 }
 
@@ -38,6 +39,7 @@ int16_t maskForUserInterfaceIdiom(UIUserInterfaceIdiom userInterfaceIdiom) {
     switch (userInterfaceIdiom) {
         case UIUserInterfaceIdiomPad: return kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_device_ipad;
         case UIUserInterfaceIdiomPhone: return kIVGRSResourceBitMask_device_generic | kIVGRSResourceBitMask_device_iphone;
+        default: return 0;
     }
 }
 
